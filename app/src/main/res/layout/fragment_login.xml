@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Fragments.Login">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/njala" />
+
+    <EditText
+        android:id="@+id/et_Email_LoginFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:hint="Enter Your Email"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinner_accountType"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="0dp"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_Password_LoginFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:hint="*************"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="8dp"
+        android:text="Forgot Password?"
+        android:textColor="#000" />
 
-</FrameLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="64dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="8dp"
+        android:text="Login"
+        android:textColor="#fff"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

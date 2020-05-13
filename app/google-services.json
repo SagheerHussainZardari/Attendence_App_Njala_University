@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "29467416684",
+    "firebase_url": "https://njala-attendence.firebaseio.com",
+    "project_id": "njala-attendence",
+    "storage_bucket": "njala-attendence.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29467416684:android:907a898a72a499920b6049",
+        "android_client_info": {
+          "package_name": "com.sagheer.attendenceappnjalauniversity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29467416684-8b7g59imamlqoot7hi8bhi3u0ukqehr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sagheer.attendenceappnjalauniversity",
+            "certificate_hash": "d13ab2c75c1962421c1f944c1a29dda0059874f2"
+          }
+        },
+        {
+          "client_id": "29467416684-d17ccq36p2n9qfk1ntkbodh7ec95d8l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKYXflxi29YEbsM3geQc5AQ3v3og7W5Dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29467416684-d17ccq36p2n9qfk1ntkbodh7ec95d8l1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
