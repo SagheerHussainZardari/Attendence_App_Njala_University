@@ -51,6 +51,9 @@ class Login : Fragment() {
     }
 
     private fun loginInAsTeacher() {
+
+        progressBarLayout2.visibility = View.VISIBLE
+
         var isTeacher = false
         val url = "https://njala-attendence.firebaseio.com/Teachers.json"
         val queue = Volley.newRequestQueue(context)
@@ -64,9 +67,23 @@ class Login : Fragment() {
             }
 
             if (isTeacher) {
-                (context as MainActivity).openFragment(DetailsSelectTeacher())
-                context?.showToast("$user is a Teacher")
+                MainActivity.mAuth.signInWithEmailAndPassword(
+                    et_Email_LoginFragment.text.toString(),
+                    et_Password_LoginFragment.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        MainActivity.isTeacher = true
+                        (context as MainActivity).openFragment(DetailsSelectTeacher())
+
+                        progressBarLayout2.visibility = View.GONE
+                    } else {
+                        progressBarLayout2.visibility = View.GONE
+                        context?.showToast("Failed Login ${it.exception!!.localizedMessage}")
+                    }
+                }
+
             } else {
+                progressBarLayout2.visibility = View.GONE
                 context?.showToast("$user you are not a Teacher")
             }
         }, Response.ErrorListener {
@@ -82,6 +99,8 @@ class Login : Fragment() {
         val url = "https://njala-attendence.firebaseio.com/Students.json"
         val queue = Volley.newRequestQueue(context)
         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+            progressBarLayout2.visibility = View.VISIBLE
             var jsonObject = JSONObject(it)
             var user = et_Email_LoginFragment.text.toString().substringBefore('@')
             for (key in jsonObject.keys()) {
@@ -91,9 +110,22 @@ class Login : Fragment() {
             }
 
             if (isStudent) {
-                (context as MainActivity).openFragment(DetailsSelectStudent())
-                context?.showToast("$user is a Student")
+                MainActivity.mAuth.signInWithEmailAndPassword(
+                    et_Email_LoginFragment.text.toString(),
+                    et_Password_LoginFragment.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        MainActivity.isTeacher = false
+                        (context as MainActivity).openFragment(DetailsSelectStudent())
+                        progressBarLayout2.visibility = View.GONE
+
+                    } else {
+                        progressBarLayout2.visibility = View.GONE
+                        context?.showToast("Failed Login ${it.exception!!.localizedMessage}")
+                    }
+                }
             } else {
+                progressBarLayout2.visibility = View.GONE
                 context?.showToast("$user you are not a Student")
             }
 
