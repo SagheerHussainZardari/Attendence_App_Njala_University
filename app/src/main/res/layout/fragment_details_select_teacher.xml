@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Fragments.DetailsSelectTeacher">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--Teacher Name AutoComplete-->
+    <AutoCompleteTextView
+        android:id="@+id/at_TeacherName_TeacherDetailsFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Teacher Details Select" />
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
 
-</FrameLayout>
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:hint="Enter Your Name"
+        android:paddingLeft="24dp"
+
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="15sp" />
+    <!--Select Program spinner-->
+    <Spinner
+        android:id="@+id/spinner_Program_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000" />
+    <!--Select course spinner-->
+    <Spinner
+        android:id="@+id/spinner_Course_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000" />
+    <!--Course code editText-->
+    <EditText
+        android:id="@+id/et_CourseCode_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:focusable="false"
+        android:hint="Course Code eg-COMP-313"
+        android:paddingLeft="24dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="15sp" />
+    <!--Select Year -->
+    <Spinner
+        android:id="@+id/spinner_Year_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+    <!--Select Semester-->
+    <Spinner
+        android:id="@+id/spinner_Semester_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+    <!--Take Attendence Button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tv_ForgotPassword"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="64dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="8dp"
+        android:text="Take Attendence"
+        android:textColor="#fff"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>
