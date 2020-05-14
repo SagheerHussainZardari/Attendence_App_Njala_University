@@ -2,6 +2,7 @@ package com.sagheer.attendenceappnjalauniversity.Fragments
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,19 @@ class DetailsSelectTeacher : Fragment() {
     private var listOfCourseCodes = ArrayList<String>()
     private var listOfYears = ArrayList<String>()
     private var listOfSemesters = ArrayList<String>()
+
+
+    companion object {
+        var teacherName = ""
+        var program = ""
+        var course = ""
+        var courseCode = ""
+        var year = ""
+        var semester = ""
+    }
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,11 +49,57 @@ class DetailsSelectTeacher : Fragment() {
         return inflater.inflate(R.layout.fragment_details_select_teacher, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setYearAndSemester()
         setTeachersDetails()
+
+        btn_takeAttendence.setOnClickListener {
+            if (listOfTeachersNames.contains(at_TeacherName_TeacherDetailsFragment.text.toString())) {
+                teacherName = at_TeacherName_TeacherDetailsFragment.text.toString()
+
+                if (spinner_Program_TeacherDetailsFragment.selectedItem != "Select Program") {
+                    program = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
+
+                    if (spinner_Course_TeacherDetailsFragment.selectedItem != "Select Course") {
+                        course = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
+                        courseCode =
+                            listOfCourseCodes[spinner_Course_TeacherDetailsFragment.selectedItemPosition]
+
+                        if (spinner_Year_TeacherDetailsFragment.selectedItem != "Select Year") {
+                            year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
+
+                            if (spinner_Semester_TeacherDetailsFragment.selectedItem != "Select Semester") {
+                                semester =
+                                    spinner_Semester_TeacherDetailsFragment.selectedItem.toString()
+
+                                Log.d("a", "dataSagheer : TeacherName = $teacherName")
+                                Log.d("a", "dataSagheer : Program = $program")
+                                Log.d("a", "dataSagheer : Course = $course")
+                                Log.d("a", "dataSagheer : Course Code = $courseCode")
+                                Log.d("a", "dataSagheer : Year = $year")
+                                Log.d("a", "dataSagheer : Semester = $semester")
+
+
+                            } else {
+                                context?.showToast("Must Select a Semester")
+                            }
+                        } else {
+                            context?.showToast("Must Select a Year")
+                        }
+                    } else {
+                        context?.showToast("Must Select a Course")
+                    }
+                } else {
+                    context?.showToast("Must Select a Program")
+                }
+            } else {
+                at_TeacherName_TeacherDetailsFragment.error =
+                    "Your Name Must Be in Teachers Name List.."
+            }
+        }
 
     }
 

@@ -45,6 +45,9 @@
         android:layout_height="48dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
+        android:prompt="@string/app_name"
+
+        android:spinnerMode="dialog"
         android:layout_marginRight="32dp"
         android:background="@drawable/ic_et_back"
         android:paddingLeft="8dp"
@@ -60,7 +63,7 @@
         android:layout_marginRight="32dp"
         android:background="@drawable/ic_et_back"
         android:focusable="false"
-        android:hint="Course Code eg-COMP-313"
+        android:hint=""
         android:paddingLeft="24dp"
         android:paddingRight="16dp"
         android:textColorHint="#000"
@@ -93,7 +96,7 @@
         android:textSize="18sp" />
     <!--Take Attendence Button-->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_takeAttendence"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_below="@id/tv_ForgotPassword"
