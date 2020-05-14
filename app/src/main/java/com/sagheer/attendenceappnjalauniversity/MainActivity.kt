@@ -61,7 +61,10 @@ class MainActivity : AppCompatActivity() {
 
 
     fun openFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
-            .addToBackStack("").commit()
+        try {
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, fragment)
+                .addToBackStack("").commit()
+        } catch (e: Exception) {
+        }
     }
 }
