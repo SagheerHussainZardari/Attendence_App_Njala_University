@@ -2,7 +2,6 @@ package com.sagheer.attendenceappnjalauniversity.Fragments
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.sagheer.attendenceappnjalauniversity.MainActivity
 import com.sagheer.attendenceappnjalauniversity.R
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.fragment_details_select_teacher.*
@@ -49,7 +49,6 @@ class DetailsSelectTeacher : Fragment() {
         return inflater.inflate(R.layout.fragment_details_select_teacher, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -67,28 +66,12 @@ class DetailsSelectTeacher : Fragment() {
                         course = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
                         courseCode =
                             listOfCourseCodes[spinner_Course_TeacherDetailsFragment.selectedItemPosition]
-
-                        if (spinner_Year_TeacherDetailsFragment.selectedItem != "Select Year") {
-                            year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
-
-                            if (spinner_Semester_TeacherDetailsFragment.selectedItem != "Select Semester") {
-                                semester =
-                                    spinner_Semester_TeacherDetailsFragment.selectedItem.toString()
-
-                                Log.d("a", "dataSagheer : TeacherName = $teacherName")
-                                Log.d("a", "dataSagheer : Program = $program")
-                                Log.d("a", "dataSagheer : Course = $course")
-                                Log.d("a", "dataSagheer : Course Code = $courseCode")
-                                Log.d("a", "dataSagheer : Year = $year")
-                                Log.d("a", "dataSagheer : Semester = $semester")
+                        year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
+                        semester = spinner_Semester_TeacherDetailsFragment.selectedItem.toString()
 
 
-                            } else {
-                                context?.showToast("Must Select a Semester")
-                            }
-                        } else {
-                            context?.showToast("Must Select a Year")
-                        }
+                        (context as MainActivity).openFragment(TakeAttendencecTeacher())
+
                     } else {
                         context?.showToast("Must Select a Course")
                     }
@@ -104,12 +87,12 @@ class DetailsSelectTeacher : Fragment() {
     }
 
     private fun setYearAndSemester() {
-        listOfYears.add("Select Year")
+        listOfYears.clear()
         listOfYears.add("1st Year")
         listOfYears.add("2nd Year")
         listOfYears.add("3rd Year")
         listOfYears.add("4th Year")
-        listOfSemesters.add("Select Semester")
+        listOfYears.add("5th Year")
         listOfSemesters.add("1st Semester")
         listOfSemesters.add("2nd Semester")
         listOfSemesters.add("3rd Semester")
@@ -135,9 +118,11 @@ class DetailsSelectTeacher : Fragment() {
         setListnerForSpinnerSemesters()
     }
 
-
-
     private fun setTeachersDetails() {
+        listOfTeachersNames.clear()
+        listOfPrograms.clear()
+        listOfCourses.clear()
+        listOfCourseCodes.clear()
         val urlTeachers = "https://njala-attendence.firebaseio.com/Teachers.json"
         val urlProgramms = "https://njala-attendence.firebaseio.com/Programs.json"
         val queue = Volley.newRequestQueue(context)
@@ -189,7 +174,6 @@ class DetailsSelectTeacher : Fragment() {
         queue.add(srPrograms)
     }
 
-
     private fun setListnerForSpinnerPrograms() {
         spinner_Program_TeacherDetailsFragment.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
@@ -202,10 +186,10 @@ class DetailsSelectTeacher : Fragment() {
                     id: Long
                 ) {
                     if (spinner_Program_TeacherDetailsFragment.selectedItem != "Select Program") {
-                        var url =
+                        val url =
                             "https://njala-attendence.firebaseio.com/Courses/" + spinner_Program_TeacherDetailsFragment.selectedItem.toString() + ".json"
-                        var queue = Volley.newRequestQueue(context)
-                        var sr = StringRequest(Request.Method.GET, url, Response.Listener {
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
 
 
                             listOfCourses.clear()
@@ -222,7 +206,7 @@ class DetailsSelectTeacher : Fragment() {
                                     )
                                 }
                             }
-
+                            spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
                             spinner_Course_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
                                 requireContext(),
                                 android.R.layout.simple_list_item_1,
@@ -253,8 +237,9 @@ class DetailsSelectTeacher : Fragment() {
                     id: Long
                 ) {
                     if (spinner_Course_TeacherDetailsFragment.selectedItem != "Select Course") {
+
                         et_CourseCode_TeacherDetailsFragment.setText(listOfCourseCodes[position])
-                        context?.showToast(spinner_Course_TeacherDetailsFragment.selectedItem.toString())
+                        et_CourseCode_TeacherDetailsFragment.visibility = View.VISIBLE
                     }
                 }
             }
@@ -271,6 +256,58 @@ class DetailsSelectTeacher : Fragment() {
                     position: Int,
                     id: Long
                 ) {
+                    if (spinner_Year_TeacherDetailsFragment.selectedItem == "1st Year") {
+                        listOfSemesters.clear()
+                        listOfSemesters.add("1st Semester")
+                        listOfSemesters.add("2nd Semester")
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+                    } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "2nd Year") {
+                        listOfSemesters.clear()
+                        listOfSemesters.add("3rd Semester")
+                        listOfSemesters.add("4th Semester")
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+                    } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "3rd Year") {
+                        listOfSemesters.clear()
+                        listOfSemesters.add("5th Semester")
+                        listOfSemesters.add("6th Semester")
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+                    } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "4th Year") {
+                        listOfSemesters.clear()
+                        listOfSemesters.add("7th Semester")
+                        listOfSemesters.add("8th Semester")
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+                    } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "5th Year") {
+                        listOfSemesters.clear()
+                        listOfSemesters.add("9th Semester")
+                        listOfSemesters.add("10th Semester")
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+                    }
+
                 }
             }
     }
