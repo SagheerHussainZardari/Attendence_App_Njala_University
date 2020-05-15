@@ -83,7 +83,6 @@ class DetailsSelectTeacher : Fragment() {
                     "Your Name Must Be in Teachers Name List.."
             }
         }
-
     }
 
     private fun setYearAndSemester() {
@@ -123,6 +122,7 @@ class DetailsSelectTeacher : Fragment() {
         listOfPrograms.clear()
         listOfCourses.clear()
         listOfCourseCodes.clear()
+
         val urlTeachers = "https://njala-attendence.firebaseio.com/Teachers.json"
         val urlProgramms = "https://njala-attendence.firebaseio.com/Programs.json"
         val queue = Volley.newRequestQueue(context)

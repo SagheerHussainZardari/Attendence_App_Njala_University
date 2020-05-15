@@ -1,15 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".Fragments.TakeAttendencecTeacher">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="6"
+            android:autoSizeTextType="uniform"
+            android:background="#000"
+            android:gravity="left"
+            android:lines="1"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Name-Roll"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1.33"
+            android:autoSizeTextType="uniform"
+            android:background="#21CC27"
+
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="P"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_margin="2dp"
+            android:layout_weight="1.33"
+            android:autoSizeTextType="uniform"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="A"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1.33"
+            android:autoSizeTextType="uniform"
+            android:background="#FFEB3B"
+
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="S"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/recyclerViewAttendence"
+        android:layout_height="0dp"
+        android:layout_weight="9" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_finishAttedence"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginRight="64dp"
+        android:layout_weight="1"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="13dp"
+        android:text="Finish Attedence"
+        android:textColor="#fff"
+        app:cornerRadius="8dp" />
+
+
+</LinearLayout>
