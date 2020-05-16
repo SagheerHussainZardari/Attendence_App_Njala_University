@@ -123,7 +123,7 @@ class DetailsSelectTeacher : Fragment() {
         listOfCourses.clear()
         listOfCourseCodes.clear()
 
-        val urlTeachers = "https://njala-attendence.firebaseio.com/Teachers.json"
+        val urlTeachers = "https://njala-attendence.firebaseio.com/TeachersEmailsList.json"
         val urlProgramms = "https://njala-attendence.firebaseio.com/Programs.json"
         val queue = Volley.newRequestQueue(context)
 

@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         if (mAuth.currentUser != null) {
             var isStudent = false
-            val url = "https://njala-attendence.firebaseio.com/Students.json"
+            val url = "https://njala-attendence.firebaseio.com/StudentsEmailsList.json"
             val queue = Volley.newRequestQueue(this)
             val sr = StringRequest(Request.Method.GET, url, Response.Listener {
 

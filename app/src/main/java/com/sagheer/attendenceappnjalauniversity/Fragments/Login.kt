@@ -55,7 +55,7 @@ class Login : Fragment() {
         progressBarLayout2.visibility = View.VISIBLE
 
         var isTeacher = false
-        val url = "https://njala-attendence.firebaseio.com/Teachers.json"
+        val url = "https://njala-attendence.firebaseio.com/TeachersEmailsList.json"
         val queue = Volley.newRequestQueue(context)
         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
             var jsonObject = JSONObject(it)
@@ -96,7 +96,7 @@ class Login : Fragment() {
     private fun loginInAsStudent() {
         var isStudent = false
 
-        val url = "https://njala-attendence.firebaseio.com/Students.json"
+        val url = "https://njala-attendence.firebaseio.com/StudentsEmailsList.json"
         val queue = Volley.newRequestQueue(context)
         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
 

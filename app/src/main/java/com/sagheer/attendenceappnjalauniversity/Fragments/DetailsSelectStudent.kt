@@ -21,5 +21,4 @@ class DetailsSelectStudent : Fragment() {
         return inflater.inflate(R.layout.fragment_details_select_student, container, false)
     }
 
-
 }
