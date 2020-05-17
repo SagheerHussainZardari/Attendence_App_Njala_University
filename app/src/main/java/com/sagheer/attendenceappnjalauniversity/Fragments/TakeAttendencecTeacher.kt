@@ -55,24 +55,26 @@ class TakeAttendencecTeacher : Fragment() {
         val url = "https://njala-attendence.firebaseio.com/StudentsDetails/$program/$year.json"
         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
 
-            try {
                 studList.clear()
                 for (key in JSONObject(it).keys()) {
-                    studList.add(
-                        AttendenceMmodel(
-                            JSONObject(it).getJSONObject(key).getString("name") + "-" + JSONObject(
-                                it
-                            ).getJSONObject(key).getString("roll")
+                    try {
+                        studList.add(
+                            AttendenceMmodel(
+                                JSONObject(it).getJSONObject(key).getString("name") + "-" + JSONObject(
+                                    it
+                                ).getJSONObject(key).getString("roll")
+                            )
                         )
-                    )
+                    } catch (e: java.lang.Exception) {
+
+                    }
+
                 }
 
                 recyclerViewAttendence.setHasFixedSize(true)
                 recyclerViewAttendence.layoutManager = LinearLayoutManager(context)
                 recyclerViewAttendence.adapter = AttedenceAdapter(requireContext(), studList)
 
-            } catch (e: Exception) {
-            }
 
         }, Response.ErrorListener {
             context?.showToast("No Response Check Your Internet!!!")
@@ -83,8 +85,6 @@ class TakeAttendencecTeacher : Fragment() {
         btn_finishAttedence.setOnClickListener {
             val ref = myRef.database.getReference("StudentsAttedence").child(program).child(year)
                 .child(course)
-
-
 
             for (i in studList.indices) {
                 var queue = Volley.newRequestQueue(context)
@@ -213,7 +213,6 @@ class TakeAttendencecTeacher : Fragment() {
                 queue.add(sr)
 
             }
-
         }
     }
 }

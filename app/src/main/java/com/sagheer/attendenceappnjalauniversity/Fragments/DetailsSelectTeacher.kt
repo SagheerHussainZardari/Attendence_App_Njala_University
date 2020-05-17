@@ -62,18 +62,24 @@ class DetailsSelectTeacher : Fragment() {
                 if (spinner_Program_TeacherDetailsFragment.selectedItem != "Select Program") {
                     program = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
 
-                    if (spinner_Course_TeacherDetailsFragment.selectedItem != "Select Course") {
-                        course = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
-                        courseCode =
-                            listOfCourseCodes[spinner_Course_TeacherDetailsFragment.selectedItemPosition]
-                        year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
-                        semester = spinner_Semester_TeacherDetailsFragment.selectedItem.toString()
+                    try {
+
+                        if (spinner_Course_TeacherDetailsFragment.selectedItem != "Select Course") {
+                            course = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
+                            courseCode =
+                                listOfCourseCodes[spinner_Course_TeacherDetailsFragment.selectedItemPosition]
+                            year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
+                            semester =
+                                spinner_Semester_TeacherDetailsFragment.selectedItem.toString()
 
 
-                        (context as MainActivity).openFragment(TakeAttendencecTeacher())
+                            (context as MainActivity).openFragment(TakeAttendencecTeacher())
 
-                    } else {
-                        context?.showToast("Must Select a Course")
+                        } else {
+                            context?.showToast("Must Select a Course")
+                        }
+                    } catch (e: java.lang.Exception) {
+                        context?.showToast("Please Select A Program With Courses!")
                     }
                 } else {
                     context?.showToast("Must Select a Program")
@@ -191,29 +197,37 @@ class DetailsSelectTeacher : Fragment() {
                         val queue = Volley.newRequestQueue(context)
                         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
 
-
-                            listOfCourses.clear()
-                            listOfCourseCodes.clear()
-                            listOfCourses.add("Select Course")
-                            listOfCourseCodes.add("Code")
-                            for (key in JSONObject(it).keys()) {
-                                listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
-                                if (JSONObject(it).getJSONObject(key).has("code")) {
-                                    listOfCourseCodes.add(
-                                        JSONObject(it).getJSONObject(key).getString(
-                                            "code"
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
                                         )
-                                    )
+                                    }
                                 }
-                            }
-                            spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
-                            spinner_Course_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
-                                requireContext(),
-                                android.R.layout.simple_list_item_1,
-                                listOfCourses
-                            )
-                            setListnerForSpinnerCourses()
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
 
+                                context?.showToast("No Courses Found In This Program")
+                            }
                         }, Response.ErrorListener {
 
                         })
