@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.DetailsSelectStudent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Fragments.DetailsSelectTeacher">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--Teacher Name AutoComplete-->
+    <!--Select Program spinner-->
+    <Spinner
+        android:id="@+id/spinner_Program_StudentDetailsFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Student Details Select" />
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000" />
+    <!--Select course spinner-->
+    <Spinner
+        android:id="@+id/spinner_Course_StudentDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:visibility="visible" />
+    <!--Select Year -->
+    <Spinner
+        android:id="@+id/spinner_Year_StudentDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+    <!--Select Semester-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_viewAttendence"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tv_ForgotPassword"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="64dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="8dp"
+        android:text="View Attendence"
+        android:textColor="#fff"
+        app:cornerRadius="8dp" />
 
-</FrameLayout>
+</LinearLayout>

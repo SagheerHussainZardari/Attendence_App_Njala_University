@@ -98,16 +98,7 @@ class DetailsSelectTeacher : Fragment() {
         listOfYears.add("3rd Year")
         listOfYears.add("4th Year")
         listOfYears.add("5th Year")
-        listOfSemesters.add("1st Semester")
-        listOfSemesters.add("2nd Semester")
-        listOfSemesters.add("3rd Semester")
-        listOfSemesters.add("4th Semester")
-        listOfSemesters.add("5th Semester")
-        listOfSemesters.add("6th Semester")
-        listOfSemesters.add("7th Semester")
-        listOfSemesters.add("8th Semester")
-        listOfSemesters.add("9th Semester")
-        listOfSemesters.add("10th Semester")
+
         spinner_Year_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
             requireContext(),
             android.R.layout.simple_list_item_1,
@@ -176,8 +167,8 @@ class DetailsSelectTeacher : Fragment() {
             context?.showToast("no responce")
         })
 
-        queue.add(srTeachers)
         queue.add(srPrograms)
+        queue.add(srTeachers)
     }
 
     private fun setListnerForSpinnerPrograms() {

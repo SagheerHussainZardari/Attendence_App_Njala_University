@@ -11,8 +11,8 @@ import com.sagheer.attendenceappnjalauniversity.R
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.recyclerview_attendence.view.*
 
-class AttedenceAdapter(var context: Context, var list: ArrayList<AttendenceMmodel>) :
 
+class AttedenceAdapter(var context: Context, var list: ArrayList<AttendenceMmodel>) :
 
     RecyclerView.Adapter<AttedenceAdapter.MyViewHolder>() {
 
