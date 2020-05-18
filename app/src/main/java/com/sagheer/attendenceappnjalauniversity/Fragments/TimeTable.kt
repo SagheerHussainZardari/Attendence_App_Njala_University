@@ -13,8 +13,6 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.sagheer.attendenceappnjalauniversity.AdaptersModels.TimeTableAdapter
 import com.sagheer.attendenceappnjalauniversity.AdaptersModels.TimeTableModel
-import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.program
-import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.year
 import com.sagheer.attendenceappnjalauniversity.R
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.fragment_time_table.*
@@ -22,6 +20,11 @@ import org.json.JSONObject
 
 
 class TimeTable : Fragment() {
+
+    companion object {
+        var program = ""
+        var year = ""
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

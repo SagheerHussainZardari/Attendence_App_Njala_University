@@ -94,6 +94,8 @@ class DetailsSelectTeacher : Fragment() {
                 program = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
 
                 if (spinner_Year_TeacherDetailsFragment.selectedItem != "Select Year") {
+                    TimeTable.program = program
+                    TimeTable.year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
                     (context as MainActivity).openFragment(TimeTable())
                 } else {
                     context?.showToast("Must Select Program and Year")
@@ -300,6 +302,7 @@ class DetailsSelectTeacher : Fragment() {
                         setUpCoursesList()
 
                     }
+
                 }
             }
     }

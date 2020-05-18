@@ -31,19 +31,6 @@
             android:paddingLeft="8dp"
             android:paddingRight="16dp"
             android:textColorHint="#000" />
-        <!--Select course spinner-->
-        <Spinner
-            android:id="@+id/spinner_Course_StudentDetailsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/ic_et_back"
-            android:paddingLeft="8dp"
-            android:paddingRight="16dp"
-            android:textColorHint="#000"
-            android:visibility="visible" />
         <!--Select Year -->
         <Spinner
             android:id="@+id/spinner_Year_StudentDetailsFragment"
@@ -57,6 +44,21 @@
             android:paddingRight="16dp"
             android:textColorHint="#000"
             android:textSize="18sp" />
+
+        <!--Select course spinner-->
+        <Spinner
+            android:id="@+id/spinner_Course_StudentDetailsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/ic_et_back"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:textColorHint="#000"
+            android:visibility="visible" />
+
         <!--Select Semester-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_viewAttendence"
@@ -69,6 +71,20 @@
             android:backgroundTint="@color/colorPrimaryDark"
             android:padding="8dp"
             android:text="View Attendence"
+            android:textColor="#fff"
+            app:cornerRadius="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_timeTable"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tv_ForgotPassword"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="64dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:padding="8dp"
+            android:text="View Time Table"
             android:textColor="#fff"
             app:cornerRadius="8dp" />
 
