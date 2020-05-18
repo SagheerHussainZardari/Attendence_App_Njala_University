@@ -93,6 +93,7 @@ class DetailsSelectTeacher : Fragment() {
 
     private fun setYearAndSemester() {
         listOfYears.clear()
+        listOfYears.add("Select Year")
         listOfYears.add("1st Year")
         listOfYears.add("2nd Year")
         listOfYears.add("3rd Year")
@@ -182,50 +183,7 @@ class DetailsSelectTeacher : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    if (spinner_Program_TeacherDetailsFragment.selectedItem != "Select Program") {
-                        val url =
-                            "https://njala-attendence.firebaseio.com/Courses/" + spinner_Program_TeacherDetailsFragment.selectedItem.toString() + ".json"
-                        val queue = Volley.newRequestQueue(context)
-                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
-
-                            if (it != "null") {
-                                listOfCourses.clear()
-                                listOfCourseCodes.clear()
-                                listOfCourses.add("Select Course")
-                                listOfCourseCodes.add("Code")
-                                for (key in JSONObject(it).keys()) {
-                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
-                                    if (JSONObject(it).getJSONObject(key).has("code")) {
-                                        listOfCourseCodes.add(
-                                            JSONObject(it).getJSONObject(key).getString(
-                                                "code"
-                                            )
-                                        )
-                                    }
-                                }
-                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
-                                spinner_Course_TeacherDetailsFragment.adapter =
-                                    ArrayAdapter<String>(
-                                        requireContext(),
-                                        android.R.layout.simple_list_item_1,
-                                        listOfCourses
-                                    )
-                                setListnerForSpinnerCourses()
-                            } else {
-                                listOfCourses.clear()
-                                listOfCourseCodes.clear()
-                                listOfCourses.add("Select Course")
-                                setListnerForSpinnerCourses()
-
-                                context?.showToast("No Courses Found In This Program")
-                            }
-                        }, Response.ErrorListener {
-
-                        })
-
-                        queue.add(sr)
-
-                    }
+                    program = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
                 }
             }
     }
@@ -261,7 +219,9 @@ class DetailsSelectTeacher : Fragment() {
                     position: Int,
                     id: Long
                 ) {
-                    if (spinner_Year_TeacherDetailsFragment.selectedItem == "1st Year") {
+                    var year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
+
+                    if (year == "1st Year") {
                         listOfSemesters.clear()
                         listOfSemesters.add("1st Semester")
                         listOfSemesters.add("2nd Semester")
@@ -271,6 +231,56 @@ class DetailsSelectTeacher : Fragment() {
                             android.R.layout.simple_list_item_1,
                             listOfSemesters
                         )
+
+                        val url =
+                            "https://njala-attendence.firebaseio.com/Courses/$program/$year.json"
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+                            context?.showToast(it)
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
+                                        )
+                                    }
+                                }
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
+
+                                context?.showToast("No Courses Found In This Program")
+                            }
+
+
+                        }, Response.ErrorListener {
+
+                        })
+
+                        queue.add(sr)
+
+
+
+
+
                     } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "2nd Year") {
                         listOfSemesters.clear()
                         listOfSemesters.add("3rd Semester")
@@ -281,6 +291,62 @@ class DetailsSelectTeacher : Fragment() {
                             android.R.layout.simple_list_item_1,
                             listOfSemesters
                         )
+
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+
+                        val url =
+                            "https://njala-attendence.firebaseio.com/Courses/$program/$year.json"
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+                            context?.showToast(it)
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
+                                        )
+                                    }
+                                }
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
+
+                                context?.showToast("No Courses Found In This Program")
+                            }
+
+
+                        }, Response.ErrorListener {
+
+                        })
+
+                        queue.add(sr)
+
+
+
+
                     } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "3rd Year") {
                         listOfSemesters.clear()
                         listOfSemesters.add("5th Semester")
@@ -291,6 +357,60 @@ class DetailsSelectTeacher : Fragment() {
                             android.R.layout.simple_list_item_1,
                             listOfSemesters
                         )
+
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+
+                        val url =
+                            "https://njala-attendence.firebaseio.com/Courses/$program/$year.json"
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+                            context?.showToast(it)
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
+                                        )
+                                    }
+                                }
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
+
+                                context?.showToast("No Courses Found In This Program")
+                            }
+
+
+                        }, Response.ErrorListener {
+
+                        })
+
+                        queue.add(sr)
+
+
                     } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "4th Year") {
                         listOfSemesters.clear()
                         listOfSemesters.add("7th Semester")
@@ -301,6 +421,60 @@ class DetailsSelectTeacher : Fragment() {
                             android.R.layout.simple_list_item_1,
                             listOfSemesters
                         )
+
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+
+                        val url =
+                            "https://njala-attendence.firebaseio.com/Courses/$program/$year.json"
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+                            context?.showToast(it)
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
+                                        )
+                                    }
+                                }
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
+
+                                context?.showToast("No Courses Found In This Program")
+                            }
+
+
+                        }, Response.ErrorListener {
+
+                        })
+
+                        queue.add(sr)
+
+
                     } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "5th Year") {
                         listOfSemesters.clear()
                         listOfSemesters.add("9th Semester")
@@ -311,8 +485,58 @@ class DetailsSelectTeacher : Fragment() {
                             android.R.layout.simple_list_item_1,
                             listOfSemesters
                         )
-                    }
 
+
+                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
+                            requireContext(),
+                            android.R.layout.simple_list_item_1,
+                            listOfSemesters
+                        )
+
+                        val url =
+                            "https://njala-attendence.firebaseio.com/Courses/$program/$year.json"
+                        val queue = Volley.newRequestQueue(context)
+                        val sr = StringRequest(Request.Method.GET, url, Response.Listener {
+
+                            context?.showToast(it)
+                            if (it != "null") {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                listOfCourseCodes.add("Code")
+                                for (key in JSONObject(it).keys()) {
+                                    listOfCourses.add(JSONObject(it).getJSONObject(key).getString("name"))
+                                    if (JSONObject(it).getJSONObject(key).has("code")) {
+                                        listOfCourseCodes.add(
+                                            JSONObject(it).getJSONObject(key).getString(
+                                                "code"
+                                            )
+                                        )
+                                    }
+                                }
+                                spinner_Course_TeacherDetailsFragment.visibility = View.VISIBLE
+                                spinner_Course_TeacherDetailsFragment.adapter =
+                                    ArrayAdapter<String>(
+                                        requireContext(),
+                                        android.R.layout.simple_list_item_1,
+                                        listOfCourses
+                                    )
+                                setListnerForSpinnerCourses()
+                            } else {
+                                listOfCourses.clear()
+                                listOfCourseCodes.clear()
+                                listOfCourses.add("Select Course")
+                                setListnerForSpinnerCourses()
+
+                                context?.showToast("No Courses Found In This Program")
+                            }
+
+
+                        }, Response.ErrorListener {
+
+                        })
+                        queue.add(sr)
+                    }
                 }
             }
     }

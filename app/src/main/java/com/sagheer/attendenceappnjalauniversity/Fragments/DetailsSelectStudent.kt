@@ -42,13 +42,15 @@ class DetailsSelectStudent : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBarLayoutSelectStudentDetails.visibility = View.VISIBLE
+
 
         setPrograms()
         setYears()
 
         btn_viewAttendence.setOnClickListener {
             if (program != "") {
-                if (course != "") {
+                if (course != "" || course != "Select Course") {
                     (context as MainActivity).openFragment(showAttendence())
                 } else {
                     context?.showToast("Select A Course..")
@@ -57,8 +59,6 @@ class DetailsSelectStudent : Fragment() {
                 context?.showToast("Select A Program..")
             }
         }
-
-
     }
 
     private fun setYears() {
@@ -116,11 +116,16 @@ class DetailsSelectStudent : Fragment() {
                     listOfPrograms
                 )
                 setListnerForSpinnerPrograms()
+                progressBarLayoutSelectStudentDetails.visibility = View.GONE
+
 
             } catch (e: Exception) {
+
             }
         }, Response.ErrorListener {
             context?.showToast("no responce")
+            progressBarLayoutSelectStudentDetails.visibility = View.GONE
+
         })
 
         queue.add(srPrograms)

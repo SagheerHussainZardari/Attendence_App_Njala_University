@@ -16,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="32dp"
+        android:drawableStart="@drawable/icon_account"
+        android:drawablePadding="12dp"
         android:layout_marginTop="8dp"
 
         android:layout_marginRight="32dp"
         android:background="@drawable/ic_et_back"
         android:hint="Enter Your Name"
-        android:paddingLeft="24dp"
+        android:paddingLeft="12dp"
 
         android:paddingRight="16dp"
         android:textColorHint="#000"
@@ -38,6 +40,20 @@
         android:paddingLeft="8dp"
         android:paddingRight="16dp"
         android:textColorHint="#000" />
+    <!--Select Year -->
+    <Spinner
+        android:id="@+id/spinner_Year_TeacherDetailsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/ic_et_back"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:textColorHint="#000"
+        android:textSize="18sp" />
+
     <!--Select course spinner-->
     <Spinner
         android:id="@+id/spinner_Course_TeacherDetailsFragment"
@@ -67,19 +83,7 @@
         android:paddingRight="16dp"
         android:textColorHint="#000"
         android:textSize="15sp" />
-    <!--Select Year -->
-    <Spinner
-        android:id="@+id/spinner_Year_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="18sp" />
+
     <!--Select Semester-->
     <Spinner
         android:id="@+id/spinner_Semester_TeacherDetailsFragment"

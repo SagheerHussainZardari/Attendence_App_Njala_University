@@ -1,6 +1,7 @@
 package com.sagheer.attendenceappnjalauniversity
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -12,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectStudent
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher
 import com.sagheer.attendenceappnjalauniversity.Fragments.Login
+import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         if (mAuth.currentUser != null) {
+
+            progressBarLayout.visibility = View.VISIBLE
             var isStudent = false
             val url = "https://njala-attendence.firebaseio.com/StudentsEmailsList.json"
             val queue = Volley.newRequestQueue(this)
@@ -45,8 +49,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 if (isStudent) {
+                    progressBarLayout.visibility = View.GONE
                     openFragment(DetailsSelectStudent())
                 } else {
+                    progressBarLayout.visibility = View.GONE
+
                     openFragment(DetailsSelectTeacher())
                 }
 

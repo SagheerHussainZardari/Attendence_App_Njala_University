@@ -5,6 +5,7 @@ class ShowAttendenceModel(
     var present: String,
     var absent: String,
     var sick: String,
+    var excuse: String,
     var total: String,
     var percentage: String
 )

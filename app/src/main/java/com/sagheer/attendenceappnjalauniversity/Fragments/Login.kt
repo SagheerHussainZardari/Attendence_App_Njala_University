@@ -27,6 +27,7 @@ class Login : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         var list = arrayOf("Teacher", "Student")
         spinner_accountType.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner, list)
 

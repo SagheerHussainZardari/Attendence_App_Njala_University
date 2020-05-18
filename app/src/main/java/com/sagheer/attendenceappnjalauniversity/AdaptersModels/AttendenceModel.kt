@@ -1,5 +1,5 @@
 package com.sagheer.attendenceappnjalauniversity.AdaptersModels
 
-data class AttendenceMmodel(
+data class AttendenceModel(
     var stdNameRoll: String
 )

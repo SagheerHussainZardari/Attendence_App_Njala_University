@@ -13,10 +13,11 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.firebase.database.FirebaseDatabase
 import com.sagheer.attendenceappnjalauniversity.AdaptersModels.AttedenceAdapter
-import com.sagheer.attendenceappnjalauniversity.AdaptersModels.AttendenceMmodel
+import com.sagheer.attendenceappnjalauniversity.AdaptersModels.AttendenceModel
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.course
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.program
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.year
+import com.sagheer.attendenceappnjalauniversity.MainActivity
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.fragment_take_attendencec_teacher.*
 import org.json.JSONObject
@@ -26,7 +27,7 @@ class TakeAttendencecTeacher : Fragment() {
 
     companion object {
         var AttedenceList = IntArray(200)
-        val studList = ArrayList<AttendenceMmodel>()
+        val studList = ArrayList<AttendenceModel>()
         val database = FirebaseDatabase.getInstance()
         val myRef = database.reference
 
@@ -59,7 +60,7 @@ class TakeAttendencecTeacher : Fragment() {
                 for (key in JSONObject(it).keys()) {
                     try {
                         studList.add(
-                            AttendenceMmodel(
+                            AttendenceModel(
                                 JSONObject(it).getJSONObject(key).getString("name") + "-" + JSONObject(
                                     it
                                 ).getJSONObject(key).getString("roll")
@@ -118,8 +119,13 @@ class TakeAttendencecTeacher : Fragment() {
                                     '-'
                                 )
                             ).child("sick").setValue(0)
-                        } else if (AttedenceList[i] == 0) {
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("excuse").setValue(0)
 
+                        } else if (AttedenceList[i] == 0) {
                             ref.child(
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
@@ -140,8 +146,17 @@ class TakeAttendencecTeacher : Fragment() {
                                     '-'
                                 )
                             ).child("sick").setValue(0)
-                        } else {
-
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("excuse").setValue(0)
+                        } else if (AttedenceList[i] == 2) {
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("sick").setValue(1)
                             ref.child(
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
@@ -151,7 +166,33 @@ class TakeAttendencecTeacher : Fragment() {
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
                                 )
-                            ).child("sick").setValue(1)
+                            ).child("present").setValue(0)
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("absent").setValue(0)
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("excuse").setValue(0)
+                        } else {
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("excuse").setValue(1)
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("total").setValue(1)
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("sick").setValue(0)
                             ref.child(
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
@@ -166,7 +207,6 @@ class TakeAttendencecTeacher : Fragment() {
 
                     } else {
                         if (AttedenceList[i] == 1) {
-
                             ref.child(
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
@@ -192,7 +232,7 @@ class TakeAttendencecTeacher : Fragment() {
                                 )
                             ).child("total")
                                 .setValue((JSONObject(it).getString("total").toInt() + 1))
-                        } else {
+                        } else if (AttedenceList[i] == 2) {
                             ref.child(
                                 TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
                                     '-'
@@ -204,8 +244,23 @@ class TakeAttendencecTeacher : Fragment() {
                                 )
                             ).child("total")
                                 .setValue((JSONObject(it).getString("total").toInt() + 1))
+                        } else {
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("excuse")
+                                .setValue((JSONObject(it).getString("excuse").toInt() + 1))
+                            ref.child(
+                                TakeAttendencecTeacher.studList[i].stdNameRoll.substringAfter(
+                                    '-'
+                                )
+                            ).child("total")
+                                .setValue((JSONObject(it).getString("total").toInt() + 1))
                         }
+
                     }
+
                 }, Response.ErrorListener {
                     context?.showToast("response = " + it.message.toString())
                 })
@@ -213,6 +268,10 @@ class TakeAttendencecTeacher : Fragment() {
                 queue.add(sr)
 
             }
+
+            context?.showToast("Attendence Uploaded To Database...")
+            (context as MainActivity).openFragment(DetailsSelectTeacher())
+
         }
     }
 }

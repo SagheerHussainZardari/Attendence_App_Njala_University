@@ -49,7 +49,8 @@ class showAttendence : Fragment() {
                     var present = JSONObject(it).getJSONObject(key).getString("present").toInt()
                     var absent = JSONObject(it).getJSONObject(key).getString("absent").toInt()
                     var sick = JSONObject(it).getJSONObject(key).getString("sick").toInt()
-                    var total = present + absent + sick
+                    var excuse = JSONObject(it).getJSONObject(key).getString("excuse").toInt()
+                    var total = present + absent + sick + excuse
                     var percentage = (present * 100) / total
                     list.add(
                         ShowAttendenceModel(
@@ -57,6 +58,7 @@ class showAttendence : Fragment() {
                             present.toString(),
                             absent.toString(),
                             sick.toString(),
+                            excuse.toString(),
                             total.toString(),
                             "%$percentage"
 

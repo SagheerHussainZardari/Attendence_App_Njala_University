@@ -15,14 +15,18 @@
         android:id="@+id/iv_Image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+
         android:layout_marginBottom="32dp"
         android:src="@drawable/njala" />
 
     <EditText
         android:id="@+id/et_Email_LoginFragment"
+        android:drawableStart="@drawable/icon_email"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="32dp"
+        android:drawablePadding="8dp"
+        android:inputType="text"
         android:layout_marginTop="8dp"
         android:layout_below="@id/iv_Image"
         android:layout_marginRight="32dp"
@@ -37,6 +41,8 @@
         android:id="@+id/spinner_accountType"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:drawableStart="@drawable/icon_account"
+        android:drawablePadding="8dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:layout_below="@id/et_Email_LoginFragment"
@@ -51,6 +57,9 @@
         android:layout_height="48dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/icon_password"
+        android:drawablePadding="8dp"
+        android:inputType="textPassword"
         android:layout_below="@id/spinner_accountType"
         android:layout_marginRight="32dp"
         android:background="@drawable/ic_et_back"

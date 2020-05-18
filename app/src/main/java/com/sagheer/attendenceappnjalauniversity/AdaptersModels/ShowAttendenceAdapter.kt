@@ -34,6 +34,7 @@ class ShowAttendenceAdapter(var context: Context, var list: ArrayList<ShowAttend
         holder.view.tv_present_ShowAttendence.text = list[position].present
         holder.view.tv_absent_ShowAttendence.text = list[position].absent
         holder.view.tv_sick_ShowAttendence.text = list[position].sick
+        holder.view.tv_excuse_ShowAttendence.text = list[position].excuse
         holder.view.tv_total_ShowAttendence.text = list[position].total
         holder.view.tv_percentage_ShowAttendence.text = list[position].percentage
     }
