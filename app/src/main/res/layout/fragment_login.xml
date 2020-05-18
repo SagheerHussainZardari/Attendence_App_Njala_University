@@ -15,7 +15,6 @@
         android:id="@+id/iv_Image"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-
         android:layout_marginBottom="32dp"
         android:src="@drawable/njala" />
 

@@ -16,15 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="32dp"
-        android:drawableStart="@drawable/icon_account"
-        android:drawablePadding="12dp"
         android:layout_marginTop="8dp"
 
         android:layout_marginRight="32dp"
         android:background="@drawable/ic_et_back"
         android:hint="Enter Your Name"
-        android:paddingLeft="12dp"
-
+        android:paddingLeft="24dp"
         android:paddingRight="16dp"
         android:textColorHint="#000"
         android:textSize="15sp" />
@@ -109,6 +106,20 @@
         android:backgroundTint="@color/colorPrimaryDark"
         android:padding="8dp"
         android:text="Take Attendence"
+        android:textColor="#fff"
+        app:cornerRadius="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_timeTable"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/tv_ForgotPassword"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="64dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:padding="8dp"
+        android:text="View Time Table"
         android:textColor="#fff"
         app:cornerRadius="8dp" />
 
