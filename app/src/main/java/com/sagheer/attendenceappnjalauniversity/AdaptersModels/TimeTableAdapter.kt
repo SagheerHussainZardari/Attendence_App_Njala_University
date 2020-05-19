@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.recyclerview_timetable.view.*
 class TimeTableAdapter(var context: Context, var list: ArrayList<TimeTableModel>) :
     RecyclerView.Adapter<TimeTableAdapter.MyViewHolder>() {
 
-
     class MyViewHolder(var view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -32,5 +31,4 @@ class TimeTableAdapter(var context: Context, var list: ArrayList<TimeTableModel>
         holder.view.tv_courseName_timetable.text = list[position].courseName
         holder.view.tv_courseTime_timetable.text = list[position].courseTime
     }
-
 }

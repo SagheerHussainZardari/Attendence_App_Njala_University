@@ -54,6 +54,7 @@ class DetailsSelectStudent : Fragment() {
                     spinner_Program_StudentDetailsFragment.selectedItem.toString()
 
                 if (spinner_Year_StudentDetailsFragment.selectedItem != "Select Year") {
+
                     TimeTable.program = DetailsSelectStudent.program
                     TimeTable.year = spinner_Year_StudentDetailsFragment.selectedItem.toString()
                     (context as MainActivity).openFragment(TimeTable())
@@ -66,11 +67,19 @@ class DetailsSelectStudent : Fragment() {
         }
 
         btn_viewAttendence.setOnClickListener {
-            if (program != "") {
-                if (course != "" || course != "Select Course") {
-                    (context as MainActivity).openFragment(showAttendence())
-                } else {
+            try {
+
+                program = spinner_Program_StudentDetailsFragment.selectedItem.toString()
+                course = spinner_Course_StudentDetailsFragment.selectedItem.toString()
+
+            } catch (e: java.lang.Exception) {
+            }
+
+            if (program != "Select Program") {
+                if (course == "Select Course" || course == "") {
                     context?.showToast("Select A Course..")
+                } else {
+                    (context as MainActivity).openFragment(showAttendence())
                 }
             } else {
                 context?.showToast("Select A Program..")

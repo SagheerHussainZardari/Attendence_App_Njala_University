@@ -40,37 +40,41 @@ class showAttendence : Fragment() {
         var queue = Volley.newRequestQueue(context)
 
         var sr = StringRequest(Request.Method.GET, url, Response.Listener {
+            try {
+                if (it != "null") {
 
-            if (it != "null") {
+                    for (key in JSONObject(it).keys()) {
+                        var nameRoll =
+                            JSONObject(it).getJSONObject(key).getString("name").toString() + "-" + key.toString()
+                        var present = JSONObject(it).getJSONObject(key).getString("present").toInt()
+                        var absent = JSONObject(it).getJSONObject(key).getString("absent").toInt()
+                        var sick = JSONObject(it).getJSONObject(key).getString("sick").toInt()
+                        var excuse = JSONObject(it).getJSONObject(key).getString("excuse").toInt()
+                        var total = present + absent + sick + excuse
+                        var percentage = (present * 100) / total
+                        list.add(
+                            ShowAttendenceModel(
+                                nameRoll,
+                                present.toString(),
+                                absent.toString(),
+                                sick.toString(),
+                                excuse.toString(),
+                                total.toString(),
+                                "$percentage"
 
-                for (key in JSONObject(it).keys()) {
-                    var nameRoll =
-                        JSONObject(it).getJSONObject(key).getString("name").toString() + "-" + key.toString()
-                    var present = JSONObject(it).getJSONObject(key).getString("present").toInt()
-                    var absent = JSONObject(it).getJSONObject(key).getString("absent").toInt()
-                    var sick = JSONObject(it).getJSONObject(key).getString("sick").toInt()
-                    var excuse = JSONObject(it).getJSONObject(key).getString("excuse").toInt()
-                    var total = present + absent + sick + excuse
-                    var percentage = (present * 100) / total
-                    list.add(
-                        ShowAttendenceModel(
-                            nameRoll,
-                            present.toString(),
-                            absent.toString(),
-                            sick.toString(),
-                            excuse.toString(),
-                            total.toString(),
-                            "%$percentage"
-
+                            )
                         )
-                    )
+                    }
+
+                    rc_showAttendence.setHasFixedSize(true)
+                    rc_showAttendence.layoutManager = LinearLayoutManager(context)
+                    rc_showAttendence.adapter = ShowAttendenceAdapter(requireContext(), list)
+
+                } else {
+                    context?.showToast("No Data Found!!!")
                 }
 
-                rc_showAttendence.setHasFixedSize(true)
-                rc_showAttendence.layoutManager = LinearLayoutManager(context)
-                rc_showAttendence.adapter = ShowAttendenceAdapter(requireContext(), list)
-
-            } else {
+            } catch (e: Exception) {
                 context?.showToast("No Data Found!!!")
             }
 

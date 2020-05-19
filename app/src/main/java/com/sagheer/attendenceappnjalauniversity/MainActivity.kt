@@ -1,9 +1,12 @@
 package com.sagheer.attendenceappnjalauniversity
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.Response
@@ -26,8 +29,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
     }
 
     override fun onResume() {
@@ -66,6 +67,23 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().add(R.id.fragment_container, Login()).commit()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menuItemLogout -> {
+                mAuth.signOut()
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+
+        }
+        return true
+    }
+
 
     fun openFragment(fragment: Fragment) {
         try {
@@ -73,5 +91,14 @@ class MainActivity : AppCompatActivity() {
                 .addToBackStack("").commit()
         } catch (e: Exception) {
         }
+    }
+
+
+    override fun onBackPressed() {
+
+        if (supportFragmentManager.backStackEntryCount > 1) {
+            super.onBackPressed()
+        }
+
     }
 }
