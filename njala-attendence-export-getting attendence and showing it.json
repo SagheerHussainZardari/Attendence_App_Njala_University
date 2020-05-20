@@ -1,0 +1,1314 @@
+{
+  "Courses": {
+    "Business and Information Technology": {
+      "course-1": {
+        "code": "COMP-111",
+        "name": "Web Programming"
+      }
+    },
+    "Computer Science": {
+      "course-1": {
+        "code": "COMP-313",
+        "name": "Java Programmming"
+      },
+      "course-2": {
+        "code": "COMP-314",
+        "name": "Artificial Intelligence"
+      }
+    }
+  },
+  "Programs": {
+    "program-1": {
+      "name": "Computer Science"
+    },
+    "program-2": {
+      "name": "Business and Information Technology"
+    },
+    "program-3": {
+      "name": "Electronics and Telecommunication Technology"
+    },
+    "program-4": {
+      "name": "Energy Studies"
+    },
+    "program-5": {
+      "name": "Physics with Computer Science"
+    },
+    "program-6": {
+      "name": "Higher Diploma Computer Science and Information Technology"
+    },
+    "program-7": {
+      "name": "Higher Diploma Electronics and Computer Information Technology"
+    },
+    "program-8": {
+      "name": "Ordinary Diploma  Computer Science and Information Technology"
+    }
+  },
+  "StudentsAttedence": {
+    "Business and Information Technology": {
+      "2nd Year": {
+        "Web Programming": {
+          "21001": {
+            "absent": 0,
+            "name": "Yayah H. Kamara",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21038": {
+            "absent": 1,
+            "name": "Hassan Kamara",
+            "present": 0,
+            "sick": 0,
+            "total": 1
+          },
+          "21039": {
+            "absent": 0,
+            "name": "Funky Sam",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21040": {
+            "absent": 0,
+            "name": "Joseph Snakoh",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21041": {
+            "absent": 0,
+            "name": "Steve Harvey",
+            "present": 0,
+            "sick": 1,
+            "total": 1
+          },
+          "21042": {
+            "absent": 1,
+            "name": "Salim Jalloh",
+            "present": 0,
+            "sick": 0,
+            "total": 1
+          },
+          "21043": {
+            "absent": 0,
+            "name": "Yusuf Macan",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21044": {
+            "absent": 0,
+            "name": "Deltina Samba",
+            "present": 0,
+            "sick": 1,
+            "total": 1
+          },
+          "21045": {
+            "absent": 0,
+            "name": "Hassan Kanu",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21046": {
+            "absent": 1,
+            "name": "Kavie Ketima",
+            "present": 0,
+            "sick": 0,
+            "total": 1
+          }
+        }
+      },
+      "4th Year": {
+        "Web Programming": {
+          "21003": {
+            "absent": 0,
+            "name": "Edna Mansaray",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    "Computer Science": {
+      "1st Year": {
+        "Artificial Intelligence": {
+          "12345": {
+            "absent": 0,
+            "name": "Abednego Musa",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "12346": {
+            "absent": 0,
+            "name": "Eric Musa",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          },
+          "21068": {
+            "absent": 0,
+            "name": "Ahmed Saidu",
+            "present": 1,
+            "sick": 0,
+            "total": 1
+          }
+        },
+        "Java Programmming": {
+          "12345": {
+            "absent": 0,
+            "name": "Abednego Musa",
+            "present": 8,
+            "sick": 0,
+            "total": 8
+          },
+          "12346": {
+            "absent": 1,
+            "name": "Eric Musa",
+            "present": 7,
+            "sick": 0,
+            "total": 8
+          },
+          "21068": {
+            "absent": 0,
+            "name": "Ahmed Saidu",
+            "present": 7,
+            "sick": 0,
+            "total": 7
+          },
+          "21069": {
+            "absent": 0,
+            "name": "Foday SN Kamara",
+            "present": 3,
+            "sick": 1,
+            "total": 4
+          },
+          "21070": {
+            "absent": 0,
+            "name": "Mathew Willams",
+            "present": 4,
+            "sick": 0,
+            "total": 4
+          },
+          "21071": {
+            "absent": 0,
+            "name": "Suliaman Jalloh",
+            "present": 2,
+            "sick": 1,
+            "total": 3
+          },
+          "21072": {
+            "absent": 0,
+            "name": "Eric Musa",
+            "present": 3,
+            "sick": 0,
+            "total": 3
+          },
+          "21073": {
+            "absent": 1,
+            "name": "Nafisiatu Kamara",
+            "present": 3,
+            "sick": 0,
+            "total": 4
+          },
+          "21074": {
+            "absent": 0,
+            "name": "Umar Koroma",
+            "present": 4,
+            "sick": 1,
+            "total": 5
+          },
+          "21075": {
+            "absent": 0,
+            "name": "Joseph Kortu",
+            "present": 5,
+            "sick": 0,
+            "total": 5
+          }
+        }
+      }
+    }
+  },
+  "StudentsDetails": {
+    "Business and Information Technology": {
+      "1st Year": {
+        "21027": {
+          "name": "Alie Koroma",
+          "roll": 21027
+        },
+        "21028": {
+          "name": "Abdul Rahman Kanu",
+          "roll": 21028
+        },
+        "21030": {
+          "name": "Musa Kamara",
+          "roll": 21030
+        },
+        "21031": {
+          "name": "Denika Ketima",
+          "roll": 21032
+        },
+        "21032": {
+          "name": "Miratu Musa",
+          "roll": 21032
+        },
+        "21033": {
+          "name": "Miracle James",
+          "roll": 21033
+        },
+        "21034": {
+          "name": "Rose Kallon",
+          "roll": 21034
+        },
+        "21035": {
+          "name": "Alice Kamara",
+          "roll": 21035
+        },
+        "21036": {
+          "name": "Augusta Fofanah",
+          "roll": 21036
+        },
+        "21079": {
+          "name": "Denis Ketima",
+          "roll": 21079
+        },
+        "24212": {
+          "name": "Alie Kanu",
+          "roll": 24212
+        }
+      },
+      "2nd Year": {
+        "21001": {
+          "name": "Yayah H. Kamara",
+          "roll": 21001
+        },
+        "21038": {
+          "name": "Hassan Kamara",
+          "roll": 21038
+        },
+        "21039": {
+          "name": "Funky Sam",
+          "roll": 21039
+        },
+        "21040": {
+          "name": "Joseph Snakoh",
+          "roll": 21040
+        },
+        "21041": {
+          "name": "Steve Harvey",
+          "roll": 21041
+        },
+        "21042": {
+          "name": "Salim Jalloh",
+          "roll": 21042
+        },
+        "21043": {
+          "name": "Yusuf Macan",
+          "roll": 21043
+        },
+        "21044": {
+          "name": "Deltina Samba",
+          "roll": 21044
+        },
+        "21045": {
+          "name": "Hassan Kanu",
+          "roll": 21045
+        },
+        "21046": {
+          "name": "Kavie Ketima",
+          "roll": 21046
+        }
+      },
+      "3rd Year": {
+        "21002": {
+          "name": "Hassan Jalloh",
+          "roll": 21002
+        },
+        "21048": {
+          "name": "Namina Kargbo",
+          "roll": 21048
+        },
+        "21049": {
+          "name": "Isatu Kamara",
+          "roll": 21049
+        },
+        "21050": {
+          "name": "John Kafila",
+          "roll": 21050
+        },
+        "21051": {
+          "name": "Fatmata E. Kamara",
+          "roll": 21051
+        },
+        "21052": {
+          "name": "Yatta Musa",
+          "roll": 21052
+        },
+        "21053": {
+          "name": "Fredious Sannoh",
+          "roll": 21053
+        },
+        "21054": {
+          "name": "Jmaes Foday",
+          "roll": 21054
+        },
+        "21055": {
+          "name": "Jane Dankay",
+          "roll": 21055
+        },
+        "21056": {
+          "name": "Alieu Kallon",
+          "roll": 21056
+        }
+      },
+      "4th Year": {
+        "21003": {
+          "name": "Edna Mansaray",
+          "roll": 21003
+        },
+        "21057": {
+          "name ": "Jeneba Kondoh",
+          "roll": 21057
+        },
+        "21058": {
+          "name": "Joseph Dambo",
+          "roll": 21058
+        },
+        "21059": {
+          "name": "Sallay Sannoh",
+          "roll": 21060
+        },
+        "21060": {
+          "name": "Hassan Boima",
+          "roll": 21060
+        },
+        "21061": {
+          "name": "Alieya Kanu",
+          "roll": 21061
+        },
+        "21062": {
+          "name": "Mohamed Kallon",
+          "roll": 21062
+        },
+        "21063": {
+          "name": "Deltina Musa",
+          "roll": 21063
+        },
+        "21064": {
+          "name": "Joyce Bangura",
+          "roll": 21064
+        },
+        "21065": {
+          "name": "Micheal S. Kamara",
+          "roll": 21065
+        }
+      }
+    },
+    "Computer Science": {
+      "1st Year": {
+        "12345": {
+          "name": "Abednego Musa",
+          "roll": 12345
+        },
+        "12346": {
+          "name": "Eric Musa",
+          "roll": 12346
+        },
+        "21068": {
+          "name": "Ahmed Saidu",
+          "roll": 21068
+        },
+        "21069": {
+          "name": "Foday SN Kamara",
+          "roll": 21069
+        },
+        "21070": {
+          "name": "Mathew Willams",
+          "roll": 21070
+        },
+        "21071": {
+          "name": "Suliaman Jalloh",
+          "roll": 21071
+        },
+        "21072": {
+          "name": "Eric Musa",
+          "roll": 21072
+        },
+        "21073": {
+          "name": "Nafisiatu Kamara",
+          "roll": 21073
+        },
+        "21074": {
+          "name": "Umar Koroma",
+          "roll": 21074
+        },
+        "21075": {
+          "name": "Joseph Kortu",
+          "roll": 21075
+        }
+      },
+      "2nd Year": {
+        "21076": {
+          "name": "Hassanatu Kabia",
+          "roll": 21076
+        },
+        "21077": {
+          "name": "Joseph Kabe",
+          "roll": 21077
+        },
+        "21078": {
+          "name": "Glory Blackie",
+          "roll": 21078
+        },
+        "21079": {
+          "name": "Magret Kabia",
+          "roll": 21079
+        },
+        "21080": {
+          "name": "Alice Alvin",
+          "roll": 21080
+        },
+        "21081": {
+          "name": "Agatha Benya",
+          "roll": 21081
+        },
+        "21082": {
+          "name": "Aruna Fomba",
+          "roll": 21082
+        },
+        "21083": {
+          "name": "Alima Kamara",
+          "roll": 21083
+        },
+        "24788": {
+          "name": "Abednego Musa",
+          "roll": 24788
+        },
+        "24789": {
+          "name": "Eric B. Musa",
+          "roll": 24789
+        }
+      },
+      "3rd Year": {
+        "21084": {
+          "name": "Harding Sam",
+          "roll": 21084
+        },
+        "21085": {
+          "name": "Kallay Sanusi ",
+          "roll": 21085
+        },
+        "21086": {
+          "name": "Katimu Sesay",
+          "roll": 21086
+        },
+        "21087": {
+          "name": "Jeneba Keifala",
+          "roll": 21087
+        },
+        "21088": {
+          "name": "John Kargbo",
+          "roll": 21088
+        },
+        "21089": {
+          "name": "Sahr Joseph Samadia",
+          "roll": 21089
+        },
+        "21090": {
+          "name": "Baindu Keifala",
+          "roll": 21090
+        },
+        "21091": {
+          "name": "Alice Kamara",
+          "roll": 21091
+        },
+        "21222": {
+          "name": "Yamba Kombla",
+          "roll": 21222
+        },
+        "23455": {
+          "name": "Salim Jalloh",
+          "roll": 23455
+        }
+      },
+      "4th Year": {
+        "21092": {
+          "name": "Josephus Kallay ",
+          "roll": 21092
+        },
+        "21093": {
+          "name": "Kaitale Mans",
+          "roll": 21094
+        },
+        "21094": {
+          "name": "Ella Queen Samuel",
+          "roll": 21094
+        },
+        "21095": {
+          "name": "Eustace Sannoh",
+          "roll": 21095
+        },
+        "21096": {
+          "name": "Eustacia Samuel",
+          "roll": 21096
+        },
+        "21097": {
+          "name": "Allen King Amadu",
+          "roll": 21097
+        },
+        "21098": {
+          "name": "Erica Alfred",
+          "roll": 21098
+        },
+        "21099": {
+          "name": "Kavie Ketima",
+          "roll ": 21099
+        },
+        "21222": {
+          "name": "Fatmata E Turay",
+          "roll": 21222
+        },
+        "22000": {
+          "name": "Tamba Walker",
+          "roll": 22000
+        }
+      }
+    },
+    "Electronics and Telecommunication Technology": {
+      "1st Year": {
+        "21004": {
+          "name": "Hassan Kamara",
+          "roll": 21004
+        },
+        "21100": {
+          "name": "Mohamed Fofanah",
+          "roll": 21100
+        },
+        "21101": {
+          "name": "Yatta Musa",
+          "roll": 21101
+        },
+        "21102": {
+          "name": "Yomba Edward",
+          "roll": 21102
+        },
+        "21103": {
+          "name": "Fatmata Sesay",
+          "roll": 21103
+        },
+        "21104": {
+          "name": "Mankay Seisay",
+          "roll": 21104
+        },
+        "21105": {
+          "name": "Alhaji Kabba",
+          "roll": 21105
+        },
+        "21106": {
+          "name": "Ernest Gborie",
+          "roll": 21106
+        },
+        "21107": {
+          "name": "Elizabeth Pujeh",
+          "roll": 21107
+        }
+      },
+      "2nd Year": {
+        "21005": {
+          "name": "Sylvanus Musa",
+          "roll": 21005
+        },
+        "21109": {
+          "name": "Fatima Jabbie",
+          "roll": 21109
+        },
+        "21110": {
+          "name": "Jan Barrie",
+          "roll": 21110
+        },
+        "21111": {
+          "name": "Isatu Fofanah",
+          "roll": 21111
+        },
+        "21112": {
+          "name": "Moses Thomas",
+          "roll": 21112
+        },
+        "21113": {
+          "name": "Jonathan Kaifala",
+          "roll": 21113
+        },
+        "21114": {
+          "name": "Sorie Foray",
+          "roll": 21114
+        },
+        "21115": {
+          "name": "Emma Benya",
+          "roll": 21115
+        },
+        "21116": {
+          "name": "Mariama Dumbuya",
+          "roll": 21116
+        },
+        "21117": {
+          "name": "Marie Samadia",
+          "roll": 21117
+        }
+      },
+      "3rd Year": {
+        "21006": {
+          "name": "Doris Wallams",
+          "roll": 21006
+        },
+        "21119": {
+          "name": "Mamoud Conteh",
+          "roll": 21119
+        },
+        "21120": {
+          "name": "Adikalie Sesay",
+          "roll": 21120
+        },
+        "21121": {
+          "name": "Amara H. Kanu",
+          "roll": 21121
+        },
+        "21122": {
+          "name": "Abdul Kargbo",
+          "roll": 21122
+        },
+        "21123": {
+          "name": "Alie Kaifala",
+          "roll": 21123
+        },
+        "21124": {
+          "name": "Laura Fornah",
+          "roll": 21124
+        },
+        "21125": {
+          "name": "Abdulai Koniga",
+          "roll": 21125
+        },
+        "21126": {
+          "name": "Naomi Kargbo",
+          "roll": 21126
+        },
+        "21127": {
+          "name": "Tenneh Koroma",
+          "roll": 21127
+        }
+      },
+      "4th Year": {
+        "19407": {
+          "name": "Yamba Kombla",
+          "roll": 19407
+        },
+        "21007": {
+          "name": "Robocop Jalloh",
+          "roll": 21007
+        },
+        "21128": {
+          "name": "Lamin Foray",
+          "roll": 21128
+        },
+        "21129": {
+          "name": "Amara Sinnah",
+          "roll": 21129
+        },
+        "21130": {
+          "name": "Thomas Daniel Sinnah",
+          "roll": 21130
+        },
+        "21131": {
+          "name": "Chriatian Samuel Musa",
+          "roll": 21131
+        },
+        "21132": {
+          "name": "Amidu Dabor",
+          "roll": 21132
+        },
+        "21133": {
+          "name": "Samuel Johnson",
+          "roll": 21133
+        },
+        "21134": {
+          "name": "Kojo Johnson",
+          "roll": 21134
+        },
+        "21135": {
+          "name": "Nama Johnson",
+          "roll": 21135
+        }
+      }
+    },
+    "Energy Studies": {
+      "1st Year": {
+        "21008": {
+          "name": "Alieu Kallon",
+          "roll": 21008
+        },
+        "21136": {
+          "name": "Hussianatu Koroma",
+          "roll": 21136
+        },
+        "21137": {
+          "name": "Abass Bio",
+          "roll": 21137
+        },
+        "21138": {
+          "name": "Fanta Jalloh",
+          "roll": 21138
+        },
+        "21139": {
+          "name": "Habayatu Jalloh",
+          "roll": 21139
+        },
+        "21140": {
+          "name": "Abderline Turay",
+          "roll": 21140
+        },
+        "21141": {
+          "name": "Fallay Sannah",
+          "roll": 21141
+        },
+        "21142": {
+          "name": "Alison Williams  ",
+          "roll": 21142
+        },
+        "21143": {
+          "name": "Mohamed Pessima",
+          "roll": 21143
+        },
+        "21144": {
+          "name": "Joseph Sankoh",
+          "roll": 21144
+        },
+        "21145": {
+          "name": "Alie Koroma",
+          "roll": 21145
+        }
+      },
+      "2nd Year": {
+        "21009": {
+          "name": "Amie Kallon",
+          "roll": 21009
+        },
+        "21146": {
+          "name": "Mary Tawio",
+          "roll": 21146
+        },
+        "21147": {
+          "name": "Aminata Turay",
+          "roll": 21147
+        },
+        "21148": {
+          "name": "Aminata Musa",
+          "roll": 21148
+        },
+        "21149": {
+          "name": "Doris Kamara",
+          "roll": 21149
+        },
+        "21150": {
+          "name": "Magret Foray",
+          "roll": 21150
+        },
+        "21151": {
+          "name": "Ann Fanta Bah",
+          "roll": 21151
+        },
+        "21152": {
+          "name": "Madiana Abdulai",
+          "roll": 21152
+        },
+        "21153": {
+          "name": "Alhaji Barrie",
+          "roll": 21153
+        },
+        "21154": {
+          "name": "Haja Fatmata Sankoh",
+          "roll": 21154
+        }
+      },
+      "3rd Year": {
+        "21010": {
+          "name": "Baindu Musa",
+          "roll": 21010
+        },
+        "21155": {
+          "name": "Marvel Williams",
+          "roll": 21155
+        },
+        "21156": {
+          "name": "Noah Kargbo",
+          "roll": 21156
+        },
+        "21157": {
+          "name": "Francis Ben Kargbo",
+          "roll": 21157
+        },
+        "21158": {
+          "name": "Musa Fofanah",
+          "roll": 21158
+        },
+        "21159": {
+          "name": "Aminata Sombi",
+          "roll": 21159
+        },
+        "21160": {
+          "name": "Alusine Mansaray",
+          "roll": 21160
+        },
+        "21161": {
+          "name": "Sulaiman Mansaray",
+          "roll": 21161
+        },
+        "21162": {
+          "name": "Fanta Jah",
+          "roll": 21162
+        },
+        "21163": {
+          "name": "Vandi Boima",
+          "roll": 21163
+        },
+        "21164": {
+          "name": "Gladys Bindi",
+          "roll": 21164
+        }
+      },
+      "4th Year": {
+        "21011": {
+          "name": "Abigal James",
+          "roll": 21011
+        },
+        "21165": {
+          "name": "Alie Jalloh",
+          "roll": 21165
+        },
+        "21166": {
+          "name": "Zaid Mansaray",
+          "roll": 21166
+        },
+        "21167": {
+          "name": "Vincent Kanu",
+          "roll": 21167
+        },
+        "21168": {
+          "name": "Aminata Sesay",
+          "roll": 21168
+        },
+        "21169": {
+          "name": "Manisha Sesay",
+          "roll": 21169
+        },
+        "21170": {
+          "name": "Alice Manfred",
+          "roll": 21170
+        },
+        "21171": {
+          "name": "Mohamed Sesay",
+          "roll": 21171
+        },
+        "21172": {
+          "name": "Kallon Musa",
+          "roll": 21172
+        },
+        "21173": {
+          "name": "Christiana Smith",
+          "roll": 21173
+        },
+        "21174": {
+          "name": "Philip Smith",
+          "roll": 21174
+        }
+      }
+    },
+    "Higher Diploma Computer Science and Information Technology": {
+      "1st Year": {
+        "21016": {
+          "name": "Edna Massquoi",
+          "roll": 21016
+        },
+        "21205": {
+          "name": "Mujay Williams",
+          "roll": 21205
+        },
+        "21206": {
+          "name": "Mukeh Mathia",
+          "roll": 21206
+        },
+        "21207": {
+          "name": "Vandi Sama",
+          "roll": 21207
+        },
+        "21208": {
+          "name": "Sannoh Kaibe",
+          "roll": 21208
+        },
+        "21209": {
+          "name": "Philip Musa",
+          "roll": 21209
+        },
+        "21210": {
+          "name": "Abednego Musa",
+          "roll": 21210
+        },
+        "21211": {
+          "nama": "Erica Vandi",
+          "roll": 21211
+        },
+        "21212": {
+          "name": "Fatmata E Turay",
+          "roll": 21212
+        },
+        "21213": {
+          "name": "Fatmata Kamara",
+          "roll": 21213
+        },
+        "21214": {
+          "name": "Gladys Bindi",
+          "roll": 21214
+        }
+      },
+      "2nd Year": {
+        "21017": {
+          "name": "Harding Sam",
+          "roll": 21017
+        },
+        "21215": {
+          "name": "John Bull",
+          "roll": 21215
+        },
+        "21216": {
+          "name": "Kia Samba",
+          "roll": 21216
+        },
+        "21217": {
+          "name": "Denisha Vimba",
+          "roll": 21217
+        },
+        "21218": {
+          "name`": "Hassan Kondo",
+          "roll": 21218
+        },
+        "21219": {
+          "name": "Mohamed Williams",
+          "roll": 21219
+        },
+        "21220": {
+          "name": "Vandi Fomba",
+          "roll": 21220
+        },
+        "21221": {
+          "name": "Sinnah Komba",
+          "roll": 21221
+        },
+        "21222": {
+          "name": "Marvel Sannoh",
+          "roll": 21222
+        },
+        "21223": {
+          "name": "Queen Ibrahim",
+          "roll": 21223
+        },
+        "21224": {
+          "name": "Bandi Monday",
+          "roll": 21224
+        }
+      },
+      "3rd Year": {
+        "21018": {
+          "name": "David Maada",
+          "roll": 21018
+        },
+        "21225": {
+          "name": "Mathew Williams",
+          "roll": 21225
+        },
+        "21226": {
+          "name": "Ibrahim Bah",
+          "roll": "21226"
+        },
+        "21227": {
+          "name": "Foday Kamara",
+          "roll": 21227
+        },
+        "21228": {
+          "name": "Doris Sesay",
+          "roll": 21228
+        },
+        "21229": {
+          "name": "Finda Sesay",
+          "roll": 21229
+        },
+        "21230": {
+          "name": "Ibrahim Williams",
+          "roll": 21230
+        },
+        "21231": {
+          "name": "John Kamara",
+          "roll": 21231
+        },
+        "21232": {
+          "name": "Alie Kallon",
+          "roll": 21232
+        },
+        "21233": {
+          "name": "Delton Kargbo",
+          "roll": 21233
+        },
+        "21234": {
+          "name": "Alie Vandy",
+          "roll": 21234
+        }
+      }
+    },
+    "Higher Diploma Electronics and Computer Information Technology": {
+      "1st Year": {
+        "21020": {
+          "name": "Aminata Margay",
+          "roll": 21020
+        },
+        "21175": {
+          "name": "Kadiatu Sesay",
+          "roll": 21175
+        },
+        "21176": {
+          "name": "Marie Johnson",
+          "roll": 21176
+        },
+        "21177": {
+          "name": "Kaday Bangura",
+          "roll": 21177
+        },
+        "21178": {
+          "name": "Eustice Bangura",
+          "roll": 21178
+        },
+        "21179": {
+          "name": "Umu Bangura",
+          "roll": 21179
+        },
+        "21180": {
+          "name": "Vaisa Turay",
+          "roll": 21180
+        },
+        "21181": {
+          "name": "Osman Bah",
+          "roll": 21181
+        },
+        "21182": {
+          "name": "Zaria Sesay",
+          "roll": 21182
+        },
+        "21183": {
+          "name": "Zara Bangura",
+          "roll": 21183
+        },
+        "21184": {
+          "name": "Chernor Dumbuya",
+          "roll": 21184
+        }
+      },
+      "2nd Year": {
+        "21021": {
+          "name": "Fatmata Kamara",
+          "roll": 21021
+        },
+        "21185": {
+          "name": "Fanta Bangura",
+          "roll": 21185
+        },
+        "21186": {
+          "name": "Brima Bah",
+          "roll": 21186
+        },
+        "21187": {
+          "name": "Nata Musa",
+          "roll": 21187
+        },
+        "21188": {
+          "name": "Abed Musa",
+          "roll": 21188
+        },
+        "21189": {
+          "name": "Sarah Vandi",
+          "roll": 21189
+        },
+        "21190": {
+          "name": "Salamatu Vinish",
+          "roll": 21190
+        },
+        "21191": {
+          "name": "Marie Sesay",
+          "roll": 21191
+        },
+        "21192": {
+          "name": "Mary Mansaray",
+          "roll": 21192
+        },
+        "21193": {
+          "name": "Senesie John",
+          "roll": 21193
+        },
+        "21194": {
+          "name": "Chelsea Senesie",
+          "roll": 21194
+        }
+      },
+      "3rd Year": {
+        "21022": {
+          "nama": "Eric Bangura",
+          "roll": 21022
+        },
+        "21195": {
+          "name": "Dauda Musa",
+          "roll": 21195
+        },
+        "21196": {
+          "name": "Senata Vamboi",
+          "roll": 21196
+        },
+        "21197": {
+          "name": "Augusta Musa",
+          "roll": 21197
+        },
+        "21198": {
+          "name": "Aruna Lansana",
+          "roll": 21198
+        },
+        "21199": {
+          "name": "Marvel Sesay",
+          "roll": 21199
+        },
+        "21200": {
+          "name": "Nafisiatu Mankay",
+          "roll": 21200
+        },
+        "21201": {
+          "name": "Amara Mansaray",
+          "roll": 21201
+        },
+        "21202": {
+          "name": "Mamusu Marvel",
+          "roll": 21202
+        },
+        "21203": {
+          "name": "Mary Williams",
+          "roll": 21203
+        },
+        "21204": {
+          "name": "Mohamed Williams",
+          "roll": 21204
+        }
+      }
+    },
+    "Ordinary Diploma  Computer Science and Information Technology": {
+      "1st Year": {
+        "21024": {
+          "name": "Kaima Jalloh",
+          "roll": 21024
+        },
+        "21235": {
+          "name": "Tricia Foday",
+          "roll": 21235
+        },
+        "21236": {
+          "name": "Foday Sesay",
+          "roll": 21236
+        }
+      },
+      "2nd Year": {
+        "21025": {
+          "name": "Sheku Kamara",
+          "roll": 21025
+        }
+      }
+    },
+    "Physics with Computer Science": {
+      "1st Year": {
+        "21012": {
+          "name ": "Abed Musa",
+          "roll": 21012
+        }
+      },
+      "2nd Year": {
+        "21013": {
+          "name": "Pricilla James",
+          "roll": 21013
+        }
+      },
+      "3rd Year": {
+        "21014": {
+          "name": "Augusta Musa",
+          "roll": 21014
+        }
+      },
+      "4th Year": {
+        "21015": {
+          "name": "James Bockarie",
+          "roll": 21015
+        }
+      }
+    }
+  },
+  "StudentsEmailsList": {
+    "musa": {
+      "name": "Musa"
+    }
+  },
+  "TeachersEmailsList": {
+    "abedmusa": {
+      "name": "Abednego Musa"
+    },
+    "alfredabu": {
+      "name": "Mr. Alfred Abu"
+    },
+    "cthomas": {
+      "name": "Mr. C Thomas"
+    },
+    "ericmusa": {
+      "name": "Eric Benjamin Musa"
+    },
+    "fatmataturay": {
+      "name": "Fatmata E. Turay"
+    },
+    "fmkallon": {
+      "name": "Alhaji Dr. Foday M. Kallon"
+    },
+    "harvey": {
+      "name": "Mr. S. S. Harvey "
+    },
+    "jameskollie": {
+      "name": "Mr. James Kollie"
+    },
+    "javedmemon": {
+      "name": "Javed Ahmed Memon"
+    },
+    "manna": {
+      "name": "Mr. Francis Manna"
+    },
+    "mauricesesay": {
+      "name": "Dr. Maurice Sesay"
+    },
+    "membei": {
+      "name": "Mr. M. Kembei"
+    },
+    "msfofanah": {
+      "name": "Prof. Mohamed. S. Fofanah"
+    },
+    "nyelenkeh": {
+      "name": "Mr. A.Nyelenkeh"
+    },
+    "sagheerhzardari": {
+      "name": "Sagheer Hussain Zardari"
+    },
+    "sesay": {
+      "name": "Mr. A. Sesay"
+    },
+    "yayahlabay": {
+      "name": "Mr. Yayah. Labay. Kamara"
+    }
+  }
+}

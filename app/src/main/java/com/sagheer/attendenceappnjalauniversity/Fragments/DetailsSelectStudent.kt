@@ -77,16 +77,19 @@ class DetailsSelectStudent : Fragment() {
 
             if (program != "Select Program") {
                 if (course == "Select Course" || course == "") {
+
                     context?.showToast("Select A Course..")
+
                 } else {
+
                     (context as MainActivity).openFragment(showAttendence())
+
                 }
             } else {
                 context?.showToast("Select A Program..")
             }
         }
     }
-
 
     private fun setUpCoursesList() {
 
