@@ -34,14 +34,14 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var list = arrayOf("Teacher", "Student")
+        var list = arrayOf("Lecturer", "Student")
         spinner_accountType.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner, list)
 
         btn_login.setOnClickListener {
             if (et_Email_LoginFragment.text.isNotEmpty()) {
 
                 if (et_Password_LoginFragment.text.isNotEmpty()) {
-                    if (spinner_accountType.selectedItem.equals("Teacher")) {
+                    if (spinner_accountType.selectedItem.equals("Lecturer")) {
                         loginInAsTeacher()
                     } else {
                         loginInAsStudent()
@@ -91,7 +91,7 @@ class Login : Fragment() {
 
             } else {
                 progressBarLayout2.visibility = View.GONE
-                context?.showToast("$user you are not a Teacher")
+                context?.showToast("$user you are not a Lecturer")
             }
         }, Response.ErrorListener {
 

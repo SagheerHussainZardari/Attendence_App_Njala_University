@@ -114,7 +114,6 @@ class DetailsSelectTeacher : Fragment() {
         listOfYears.add("2nd Year")
         listOfYears.add("3rd Year")
         listOfYears.add("4th Year")
-        listOfYears.add("5th Year")
 
         spinner_Year_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
             requireContext(),
@@ -287,18 +286,6 @@ class DetailsSelectTeacher : Fragment() {
                         )
 
 
-                        setUpCoursesList()
-
-                    } else if (spinner_Year_TeacherDetailsFragment.selectedItem == "5th Year") {
-                        listOfSemesters.clear()
-                        listOfSemesters.add("9th Semester")
-                        listOfSemesters.add("10th Semester")
-
-                        spinner_Semester_TeacherDetailsFragment.adapter = ArrayAdapter<String>(
-                            requireContext(),
-                            android.R.layout.simple_list_item_1,
-                            listOfSemesters
-                        )
                         setUpCoursesList()
 
                     }
