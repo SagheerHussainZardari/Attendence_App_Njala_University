@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="48dp"
     android:orientation="vertical"
-    android:padding="12dp"
+    android:drawablePadding="8dp"
     android:text="Teacher"
+    android:gravity="center_vertical"
     android:drawableStart="@drawable/icon_account"
-    android:drawablePadding="12dp"
+    android:padding="8dp"
     android:textColor="#000"
     android:textSize="18sp">
 
 </TextView>
-

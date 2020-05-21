@@ -34,6 +34,8 @@ class showAttendence : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tv_ProgramAndYear_ShowAttendence.text = "$program -- $year\n$course"
+
         var list = ArrayList<ShowAttendenceModel>()
         var url =
             "https://njala-attendence.firebaseio.com/StudentsAttedence/$program/$year/$course.json"

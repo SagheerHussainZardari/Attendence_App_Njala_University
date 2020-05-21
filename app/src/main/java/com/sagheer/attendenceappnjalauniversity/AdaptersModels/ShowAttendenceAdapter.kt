@@ -1,6 +1,7 @@
 package com.sagheer.attendenceappnjalauniversity.AdaptersModels
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,8 @@ class ShowAttendenceAdapter(var context: Context, var list: ArrayList<ShowAttend
 
 
     override fun onBindViewHolder(holder: MyyViewHolder, position: Int) {
+
+
         holder.view.tv_stdNameRoll_ShowAttendence.text = list[position].stdNameRoll
         holder.view.tv_present_ShowAttendence.text = list[position].present
         holder.view.tv_absent_ShowAttendence.text = list[position].absent
@@ -37,5 +40,10 @@ class ShowAttendenceAdapter(var context: Context, var list: ArrayList<ShowAttend
         holder.view.tv_excuse_ShowAttendence.text = list[position].excuse
         holder.view.tv_total_ShowAttendence.text = list[position].total
         holder.view.tv_percentage_ShowAttendence.text = list[position].percentage
+
+        if (list[position].percentage.toInt() < 50)
+            holder.view.tv_stdNameRoll_ShowAttendence.setBackgroundColor(Color.RED)
+
+
     }
 }

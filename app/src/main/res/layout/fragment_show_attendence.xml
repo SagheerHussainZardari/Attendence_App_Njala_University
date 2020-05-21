@@ -7,6 +7,17 @@
     android:orientation="vertical"
     tools:context=".Fragments.showAttendence">
 
+    <TextView
+        android:id="@+id/tv_ProgramAndYear_ShowAttendence"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:lines="2"
+        android:padding="2dp"
+        android:text="couse name"
+        android:textColor="#fff" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"

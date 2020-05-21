@@ -1,6 +1,7 @@
 package com.sagheer.attendenceappnjalauniversity.Fragments
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,7 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         var list = arrayOf("Lecturer", "Student")
         spinner_accountType.adapter = ArrayAdapter<String>(requireContext(), R.layout.spinner, list)
 
@@ -55,6 +57,26 @@ class Login : Fragment() {
             }
         }
 
+
+        tv_ForgotPassword.setOnClickListener {
+            resetPassword()
+        }
+    }
+
+    private fun resetPassword() {
+        if (Patterns.EMAIL_ADDRESS.matcher(et_Email_LoginFragment.text.toString()).matches()) {
+            MainActivity.mAuth.sendPasswordResetEmail(et_Email_LoginFragment.text.toString())
+                .addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        context?.showToast("Password Reset Email is Sent To ${et_Email_LoginFragment.text}")
+                    } else {
+                        context?.showToast("Something Went Wrong Password Reset Failed\nTry Again Later...")
+                    }
+                }
+        } else {
+            et_Email_LoginFragment.error =
+                "Enter a valid email than click on the forgot password text."
+        }
     }
 
     private fun loginInAsTeacher() {
