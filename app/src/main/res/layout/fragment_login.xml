@@ -11,99 +11,111 @@
     tools:context=".Fragments.Login">
 
 
-    <ImageView
-        android:id="@+id/iv_Image"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:src="@drawable/njala" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_heading"
-        android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/iv_Image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/njala" />
 
-        android:layout_height="wrap_content"
-        android:layout_below="@id/iv_Image"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="serif"
-        android:text="Najala University\nMobile Attendence"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="match_parent"
 
-    <EditText
-        android:id="@+id/et_Email_LoginFragment"
-        android:drawableStart="@drawable/icon_email"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:drawablePadding="8dp"
-        android:inputType="text"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/tv_heading"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:hint="Enter Your Email"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="18sp" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_Image"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="serif"
+            android:text="Najala University\nMobile Attendence"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="24sp" />
 
-    <Spinner
-        android:id="@+id/spinner_accountType"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:drawableStart="@drawable/icon_account"
-        android:drawablePadding="8dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/et_Email_LoginFragment"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="0dp"
-        android:textSize="18sp" />
+        <EditText
+            android:id="@+id/et_Email_LoginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tv_heading"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/ic_et_back"
+            android:drawableStart="@drawable/icon_email"
+            android:drawablePadding="8dp"
+            android:hint="Enter Your Email"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:textColorHint="#000"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/et_Password_LoginFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/icon_password"
-        android:drawablePadding="8dp"
-        android:inputType="textPassword"
-        android:layout_below="@id/spinner_accountType"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:hint="*************"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="18sp" />
+        <Spinner
+            android:id="@+id/spinner_accountType"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/et_Email_LoginFragment"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/ic_et_back"
+            android:drawableStart="@drawable/icon_account"
+            android:drawablePadding="8dp"
+            android:paddingLeft="0dp"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/tv_ForgotPassword"
-        android:layout_below="@id/et_Password_LoginFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="8dp"
-        android:text="Forgot Password?"
-        android:textColor="#000" />
+        <EditText
+            android:id="@+id/et_Password_LoginFragment"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/spinner_accountType"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/ic_et_back"
+            android:drawableStart="@drawable/icon_password"
+            android:drawablePadding="8dp"
+            android:hint="*************"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:textColorHint="#000"
+            android:textSize="18sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
-        android:layout_below="@id/tv_ForgotPassword"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="64dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:padding="8dp"
-        android:text="Login"
-        android:textColor="#fff"
-        app:cornerRadius="8dp" />
+        <TextView
+            android:id="@+id/tv_ForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_Password_LoginFragment"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:text="Forgot Password?"
+            android:textColor="#000" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/tv_ForgotPassword"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="64dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:padding="8dp"
+            android:text="Login"
+            android:textColor="#fff"
+            app:cornerRadius="8dp" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
 
     <LinearLayout
         android:id="@+id/progressBarLayout2"
@@ -132,5 +144,4 @@
 
 
     </LinearLayout>
-
 </RelativeLayout>

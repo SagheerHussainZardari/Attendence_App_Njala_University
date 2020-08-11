@@ -10,106 +10,119 @@
     android:orientation="vertical"
     tools:context=".Fragments.DetailsSelectTeacher">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
 
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!--Select Program spinner-->
-        <Spinner
-            android:id="@+id/spinner_Program_StudentDetailsFragment"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/ic_et_back"
-            android:paddingLeft="8dp"
-            android:paddingRight="16dp"
-            android:textColorHint="#000" />
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
 
-        <!-- Select Year -->
-        <Spinner
-            android:id="@+id/spinner_Year_StudentDetailsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/ic_et_back"
-            android:paddingLeft="8dp"
-            android:paddingRight="16dp"
-            android:textColorHint="#000"
-            android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
 
-        <!--Select course spinner-->
-        <Spinner
-            android:id="@+id/spinner_Course_StudentDetailsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="32dp"
-            android:background="@drawable/ic_et_back"
-            android:paddingLeft="8dp"
-            android:paddingRight="16dp"
-            android:textColorHint="#000"
-            android:visibility="visible" />
+                android:orientation="vertical">
 
-        <!--Select Semester-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_viewAttendence"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@id/tv_ForgotPassword"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="64dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:padding="8dp"
-            android:text="View Attendence"
-            android:textColor="#fff"
-            app:cornerRadius="8dp" />
+                <!--Select Program spinner-->
+                <Spinner
+                    android:id="@+id/spinner_Program_StudentDetailsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/ic_et_back"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="16dp"
+                    android:textColorHint="#000" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_timeTable"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_below="@id/tv_ForgotPassword"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="64dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:padding="8dp"
-            android:text="View Time Table"
-            android:textColor="#fff"
-            app:cornerRadius="8dp" />
+                <!-- Select Year -->
+                <Spinner
+                    android:id="@+id/spinner_Year_StudentDetailsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/ic_et_back"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="16dp"
+                    android:textColorHint="#000"
+                    android:textSize="18sp" />
 
-    </LinearLayout>
+                <!--Select course spinner-->
+                <Spinner
+                    android:id="@+id/spinner_Course_StudentDetailsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="32dp"
+                    android:background="@drawable/ic_et_back"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="16dp"
+                    android:textColorHint="#000"
+                    android:visibility="visible" />
 
-    <RelativeLayout
-        android:id="@+id/progressBarLayoutSelectStudentDetails"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:visibility="gone">
+                <!--Select Semester-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_viewAttendence"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/tv_ForgotPassword"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="64dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:padding="8dp"
+                    android:text="View Attendence"
+                    android:textColor="#fff"
+                    app:cornerRadius="8dp" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_timeTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/tv_ForgotPassword"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginRight="64dp"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:padding="8dp"
+                    android:text="View Time Table"
+                    android:textColor="#fff"
+                    app:cornerRadius="8dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/progressBar"
-            android:layout_centerInParent="true"
-            android:text="Loading..." />
+            </LinearLayout>
 
-    </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/progressBarLayoutSelectStudentDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressBar"
+                    android:layout_centerInParent="true"
+                    android:text="Loading..." />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

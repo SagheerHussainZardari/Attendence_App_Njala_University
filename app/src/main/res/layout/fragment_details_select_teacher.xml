@@ -10,151 +10,164 @@
     android:orientation="vertical"
     tools:context=".Fragments.DetailsSelectTeacher">
 
-    <!--Teacher Name AutoComplete-->
-    <AutoCompleteTextView
-        android:id="@+id/at_TeacherName_TeacherDetailsFragment"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="match_parent">
 
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:hint="Enter Your Name"
-        android:paddingLeft="24dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="15sp" />
-    <!--Select Program spinner-->
-    <Spinner
-        android:id="@+id/spinner_Program_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
+            <!--Teacher Name AutoComplete-->
+            <AutoCompleteTextView
+                android:id="@+id/at_TeacherName_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
 
-    <!--Select course spinner-->
-    <Spinner
-        android:id="@+id/spinner_Course_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:visibility="gone" />
-    <!--Select Year -->
-    <Spinner
-        android:id="@+id/spinner_Year_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="18sp" />
-
-    <!--Course code editText-->
-    <EditText
-        android:id="@+id/et_CourseCode_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:visibility="gone"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:focusable="false"
-        android:hint=""
-        android:paddingLeft="24dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="15sp" />
-
-    <!--Select Semester-->
-    <Spinner
-        android:id="@+id/spinner_Semester_TeacherDetailsFragment"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="32dp"
-        android:background="@drawable/ic_et_back"
-        android:paddingLeft="8dp"
-        android:paddingRight="16dp"
-        android:textColorHint="#000"
-        android:textSize="18sp" />
-
-    <!--    <EditText-->
-    <!--        android:id="@+id/et_SelectDate_TeacherDetailsFragment"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="48dp"-->
-    <!--        android:layout_marginLeft="32dp"-->
-    <!--        android:layout_marginTop="8dp"-->
-    <!--        android:layout_marginRight="32dp"-->
-    <!--        android:background="@drawable/ic_et_back"-->
-    <!--        android:focusable="true"-->
-    <!--        android:hint="Date eg- 24/5/2020"-->
-    <!--        android:paddingLeft="24dp"-->
-    <!--        android:paddingRight="16dp"-->
-    <!--        android:textColorHint="#000"-->
-    <!--        android:textSize="15sp" />-->
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:hint="Enter Your Name"
+                android:paddingLeft="24dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000"
+                android:textSize="15sp" />
+            <!--Select Program spinner-->
+            <Spinner
+                android:id="@+id/spinner_Program_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000" />
 
 
-    <!--Take Attendence Button-->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_takeAttendence"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/tv_ForgotPassword"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="64dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:padding="8dp"
-        android:text="Take Attendence"
-        android:textColor="#fff"
-        app:cornerRadius="8dp" />
+            <!--Select course spinner-->
+            <Spinner
+                android:id="@+id/spinner_Course_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000"
+                android:visibility="gone" />
+            <!--Select Year -->
+            <Spinner
+                android:id="@+id/spinner_Year_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000"
+                android:textSize="18sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_viewAttendenceTeacher"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/tv_ForgotPassword"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="64dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:padding="8dp"
-        android:text="View Attendence"
-        android:textColor="#fff"
-        app:cornerRadius="8dp" />
+            <!--Course code editText-->
+            <EditText
+                android:id="@+id/et_CourseCode_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:focusable="false"
+                android:hint=""
+                android:paddingLeft="24dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000"
+                android:textSize="15sp"
+                android:visibility="gone" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_timeTablee"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_below="@id/tv_ForgotPassword"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="64dp"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:padding="8dp"
-        android:text="View Time Table"
-        android:textColor="#fff"
-        app:cornerRadius="8dp" />
+            <!--Select Semester-->
+            <Spinner
+                android:id="@+id/spinner_Semester_TeacherDetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:background="@drawable/ic_et_back"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:textColorHint="#000"
+                android:textSize="18sp" />
 
+            <!--    <EditText-->
+            <!--        android:id="@+id/et_SelectDate_TeacherDetailsFragment"-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="48dp"-->
+            <!--        android:layout_marginLeft="32dp"-->
+            <!--        android:layout_marginTop="8dp"-->
+            <!--        android:layout_marginRight="32dp"-->
+            <!--        android:background="@drawable/ic_et_back"-->
+            <!--        android:focusable="true"-->
+            <!--        android:hint="Date eg- 24/5/2020"-->
+            <!--        android:paddingLeft="24dp"-->
+            <!--        android:paddingRight="16dp"-->
+            <!--        android:textColorHint="#000"-->
+            <!--        android:textSize="15sp" />-->
+
+
+            <!--Take Attendence Button-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_takeAttendence"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/tv_ForgotPassword"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="64dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:padding="8dp"
+                android:text="Take Attendence"
+                android:textColor="#fff"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_viewAttendenceTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/tv_ForgotPassword"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="64dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:padding="8dp"
+                android:text="View Attendence"
+                android:textColor="#fff"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_timeTablee"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/tv_ForgotPassword"
+                android:layout_marginLeft="64dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="64dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:padding="8dp"
+                android:text="View Time Table"
+                android:textColor="#fff"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
