@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                     openFragment(DetailsSelectStudent())
                 } else {
                     progressBarLayout.visibility = View.GONE
-
                     openFragment(DetailsSelectTeacher())
                 }
 

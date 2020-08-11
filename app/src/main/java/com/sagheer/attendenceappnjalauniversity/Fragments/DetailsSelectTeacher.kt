@@ -1,12 +1,14 @@
 package com.sagheer.attendenceappnjalauniversity.Fragments
 
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.android.volley.Request
 import com.android.volley.Response
@@ -30,13 +32,21 @@ class DetailsSelectTeacher : Fragment() {
     private var listOfSemesters = ArrayList<String>()
 
 
+
     companion object {
         var teacherName = ""
         var program = ""
         var course = ""
-        var courseCode = ""
         var year = ""
+        var courseCode = ""
         var semester = ""
+        var date = ""
+        var isTeacherLoggedIn = false
+
+
+        var programm = ""
+        var coursee = ""
+        var yearr = ""
     }
 
 
@@ -49,11 +59,40 @@ class DetailsSelectTeacher : Fragment() {
         return inflater.inflate(R.layout.fragment_details_select_teacher, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setYearAndSemester()
         setTeachersDetails()
+
+
+        btn_viewAttendenceTeacher.setOnClickListener {
+
+            if (spinner_Program_TeacherDetailsFragment.selectedItem.toString() != "Select Program") {
+                if (spinner_Year_TeacherDetailsFragment.selectedItem.toString() == "Select Year") {
+
+                    context?.showToast("Select A Year..")
+
+                } else {
+
+                    if (spinner_Course_TeacherDetailsFragment.selectedItem.toString() == "Select Course") {
+                        context?.showToast("Select Course..")
+                    } else {
+
+                        programm = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
+                        coursee = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
+                        yearr = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
+
+                        isTeacherLoggedIn = true
+                        (context as MainActivity).openFragment(showAttendence())
+                    }
+                }
+            } else {
+                context?.showToast("Select A Program..")
+            }
+        }
+
 
         btn_takeAttendence.setOnClickListener {
             if (listOfTeachersNames.contains(at_TeacherName_TeacherDetailsFragment.text.toString())) {
@@ -64,7 +103,11 @@ class DetailsSelectTeacher : Fragment() {
                     try {
 
                         if (spinner_Course_TeacherDetailsFragment.selectedItem != "Select Course") {
-                            course = spinner_Course_TeacherDetailsFragment.selectedItem.toString()
+
+                            //if(et_SelectDate_TeacherDetailsFragment.text.toString().trim().isNotEmpty()) {
+                            //  date = et_SelectDate_TeacherDetailsFragment.text.toString()
+                            course =
+                                spinner_Course_TeacherDetailsFragment.selectedItem.toString()
                             courseCode =
                                 listOfCourseCodes[spinner_Course_TeacherDetailsFragment.selectedItemPosition]
                             year = spinner_Year_TeacherDetailsFragment.selectedItem.toString()
@@ -74,6 +117,9 @@ class DetailsSelectTeacher : Fragment() {
 
                             (context as MainActivity).openFragment(TakeAttendencecTeacher())
 
+//                            }else{
+//                                et_SelectDate_TeacherDetailsFragment.error = "Please Enter The Date!!!"
+//                            }
                         } else {
                             context?.showToast("Must Select a Course")
                         }
@@ -88,7 +134,7 @@ class DetailsSelectTeacher : Fragment() {
                     "Your Name Must Be in Teachers Name List.."
             }
         }
-        btn_timeTable.setOnClickListener {
+        btn_timeTablee.setOnClickListener {
 
             if (spinner_Program_TeacherDetailsFragment.selectedItem != "Select Program") {
                 program = spinner_Program_TeacherDetailsFragment.selectedItem.toString()
@@ -103,8 +149,8 @@ class DetailsSelectTeacher : Fragment() {
             } else {
                 context?.showToast("Must Select Program and Year")
             }
-
         }
+
     }
 
     private fun setYearAndSemester() {

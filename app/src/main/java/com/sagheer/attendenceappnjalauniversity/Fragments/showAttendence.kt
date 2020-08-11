@@ -16,6 +16,10 @@ import com.sagheer.attendenceappnjalauniversity.AdaptersModels.ShowAttendenceMod
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectStudent.Companion.course
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectStudent.Companion.program
 import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectStudent.Companion.year
+import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.coursee
+import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.isTeacherLoggedIn
+import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.programm
+import com.sagheer.attendenceappnjalauniversity.Fragments.DetailsSelectTeacher.Companion.yearr
 import com.sagheer.attendenceappnjalauniversity.R
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.fragment_show_attendence.*
@@ -34,8 +38,70 @@ class showAttendence : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv_ProgramAndYear_ShowAttendence.text = "$program -- $year\n$course"
+        if (isTeacherLoggedIn) {
+            showTeacherAttendence()
+        } else {
+            showStudentAttendence()
+        }
 
+    }
+
+    private fun showTeacherAttendence() {
+        tv_ProgramAndYear_ShowAttendence.text = "$programm -- $yearr\n$coursee"
+        var list = ArrayList<ShowAttendenceModel>()
+        var url =
+            "https://njala-attendence.firebaseio.com/StudentsAttedence/$programm/$yearr/$coursee.json"
+        var queue = Volley.newRequestQueue(context)
+
+        var sr = StringRequest(Request.Method.GET, url, Response.Listener {
+            try {
+                if (it != "null") {
+
+                    for (key in JSONObject(it).keys()) {
+                        var nameRoll =
+                            JSONObject(it).getJSONObject(key).getString("name")
+                                .toString() + "-" + key.toString()
+                        var present = JSONObject(it).getJSONObject(key).getString("present").toInt()
+                        var absent = JSONObject(it).getJSONObject(key).getString("absent").toInt()
+                        var sick = JSONObject(it).getJSONObject(key).getString("sick").toInt()
+                        var excuse = JSONObject(it).getJSONObject(key).getString("excuse").toInt()
+                        var total = present + absent + sick + excuse
+                        var percentage = (present * 100) / total
+                        list.add(
+                            ShowAttendenceModel(
+                                nameRoll,
+                                present.toString(),
+                                absent.toString(),
+                                sick.toString(),
+                                excuse.toString(),
+                                total.toString(),
+                                "$percentage"
+
+                            )
+                        )
+                    }
+
+                    rc_showAttendence.setHasFixedSize(true)
+                    rc_showAttendence.layoutManager = LinearLayoutManager(context)
+                    rc_showAttendence.adapter = ShowAttendenceAdapter(requireContext(), list)
+
+                } else {
+                    context?.showToast("No Data Found!!!")
+                }
+
+            } catch (e: Exception) {
+                context?.showToast("No Data Found!!!")
+            }
+
+        }, Response.ErrorListener {
+            context?.showToast("Check Your Internet Connection!")
+        })
+
+        queue.add(sr)
+    }
+
+    private fun showStudentAttendence() {
+        tv_ProgramAndYear_ShowAttendence.text = "$program -- $year\n$course"
         var list = ArrayList<ShowAttendenceModel>()
         var url =
             "https://njala-attendence.firebaseio.com/StudentsAttedence/$program/$year/$course.json"
@@ -85,6 +151,5 @@ class showAttendence : Fragment() {
         })
 
         queue.add(sr)
-
     }
 }

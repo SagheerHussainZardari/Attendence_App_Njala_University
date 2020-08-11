@@ -1,6 +1,5 @@
 package com.sagheer.attendenceappnjalauniversity.Fragments
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,6 @@ import com.sagheer.attendenceappnjalauniversity.R
 import com.sagheer.attendenceappnjalauniversity.showToast
 import kotlinx.android.synthetic.main.fragment_time_table.*
 import org.json.JSONObject
-
 
 class TimeTable : Fragment() {
 
@@ -40,7 +38,7 @@ class TimeTable : Fragment() {
         val url = "https://njala-attendence.firebaseio.com/TimeTable/$program/$year.json"
         val queue = Volley.newRequestQueue(context)
         val sr = StringRequest(Request.Method.GET, url, Response.Listener {
-            var list = ArrayList<TimeTableModel>()
+        val list = ArrayList<TimeTableModel>()
 
             if (it != "null") {
 

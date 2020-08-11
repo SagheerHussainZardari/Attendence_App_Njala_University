@@ -88,12 +88,12 @@ class TakeAttendencecTeacher : Fragment() {
                 .child(course)
 
             for (i in studList.indices) {
-                var queue = Volley.newRequestQueue(context)
-                var url =
+                val queue = Volley.newRequestQueue(context)
+                val url =
                     "https://njala-attendence.firebaseio.com/StudentsAttedence/$program/$year/$course/${studList[i].stdNameRoll.substringAfter(
                         '-'
                     )}.json"
-                var sr = StringRequest(Request.Method.GET, url, Response.Listener {
+                val sr = StringRequest(Request.Method.GET, url, Response.Listener {
                     if (it == "null") {
 
                         ref.child(studList[i].stdNameRoll.substringAfter('-')).child("name")
